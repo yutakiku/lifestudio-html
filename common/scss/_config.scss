@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+/* reset.css 読み込み */
+@import "reset";
+
+/* フォント指定 */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+
+/* メディアクエリ */
+$tablet:  "screen and (max-width:960px)";
+$mobile:  "screen and (max-width:600px)";
+
+/* 色指定 */
+$bg: #f1f1f1;
+$light-grey-blue: #9ec8c2;
+$light-grey: #f0ebe6;
+$putty: #c7b299;
+$btn-gray-dead: #e0e0e0;
+$lipstick: #e91e63;
+$faded-pink: #e4c6ca;
+
+

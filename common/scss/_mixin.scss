@@ -1,0 +1,244 @@
+@charset "UTF-8";
+
+/* 文字サイズ設定 */
+@mixin fz($size) {
+	font-size: $size + px;
+	font-size: ($size / 10) * 1rem;
+}
+
+/* table-cell対応 */
+@mixin table-cell($vertical: middle) {
+	display: table-cell;
+	vertical-align: $vertical;
+}
+
+/* inline-block対応 */
+@mixin inline-block($vertical: middle) {
+	display: inline-block;
+	vertical-align: $vertical;
+}
+
+/* absolute 上下左右中央寄せ */
+@mixin abs-center($top: 0, $right: 0, $bottom: 0, $left: 0) {
+	margin: auto;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+	position: absolute;
+}
+
+/* インデント設定 */
+@mixin text-indent($value: 1) {
+	padding-left: #{$value}em;
+	text-indent: -#{$value}em;
+}
+
+/* lineclamp */
+@mixin lineclamp($clamp: 3) {
+	line-height: 1.5;
+	height: 1.5em * $clamp;
+	background-color: #fff;
+	position: relative;
+	padding-right: 1em;
+	overflow: hidden;
+	&:before {
+		content: "...";
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		display: inline-block;
+		width: 1em;
+	}
+	&::after {
+		content: "";
+		position: relative;
+		right: -1em;
+		float: right;
+		width: 1em;
+		height: 100%;
+		background-color: inherit;
+	}
+}
+
+/* アイコン矢印 上 */
+@mixin arrow_t($color: #fff, $width: 7px, $top: 30%, $right: 0, $bottom: 0, $left: auto) {
+	margin: auto;
+	border-bottom: 2px solid $color;
+	border-left: 2px solid $color;
+	width: $width;
+	height: $width;
+	content: "";
+	position: absolute;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+	@include transform(rotate(135deg));
+}
+
+
+/* アイコン矢印 下 */
+@mixin arrow_b($color: #fff, $width: 7px, $top: 0, $right: 0, $bottom: 30%, $left: auto) {
+	margin: auto;
+	border-top: 2px solid $color;
+	border-right: 2px solid $color;
+	width: $width;
+	height: $width;
+	content: "";
+	position: absolute;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+	@include transform(rotate(135deg));
+}
+
+/* アイコン矢印 左 */
+@mixin arrow_l($color: #fff, $width: 7px, $top: 0, $right: auto, $bottom: 0, $left: 0) {
+	margin: auto;
+	border-bottom: 2px solid $color;
+	border-left: 2px solid $color;
+	width: $width;
+	height: $width;
+	content: "";
+	position: absolute;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+	@include transform(rotate(45deg));
+}
+
+/* アイコン矢印 右 */
+@mixin arrow_r($color: #fff, $width: 7px, $top: 0, $right: 0, $bottom: 0, $left: auto) {
+	margin: auto;
+	border-top: 2px solid $color;
+	border-right: 2px solid $color;
+	width: $width;
+	height: $width;
+	content: "";
+	position: absolute;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+	@include transform(rotate(45deg));
+}
+
+
+
+/* フォントスタイル */
+@mixin h1_standard($align: center) {
+	@include fz(26);
+	font-weight: bold;
+	text-align: $align;
+	line-height: 1.38;
+	color: #333333;
+}
+
+@mixin h1_open_sans($align: center) {
+	@include fz(26);
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+	text-align: $align;
+	line-height: 1.31;
+	color: #333333;
+}
+
+@mixin h1_sub($color: #fff, $align: center) {
+	@include fz(16);
+	font-family: 'Open Sans', sans-serif;
+	line-height: 1.25;
+	text-align: $align;
+	color: $color;
+}
+
+@mixin h1_blog($align: justify) {
+	@include fz(26);
+	font-weight: 500;
+	line-height: 1.38;
+	text-align: $align;
+	color: #333333;
+}
+
+
+@mixin h2_open_sans($align: left) {
+	@include fz(26);
+	font-family: 'Open Sans', sans-serif;
+	line-height: 1;
+	color: #333333;
+	text-align: $align;
+}
+
+@mixin h2_blog($align: left) {
+	@include fz(18);
+	font-weight: bold;
+	line-height: 1.78;
+	color: #333333;
+	text-align: $align;
+}
+
+@mixin h2_standard($align: left) {
+	@include fz(16);
+	font-weight: bold;
+	line-height: 1.5;
+	color: #333333;
+	text-align: $align;
+}
+
+@mixin h3_standard($align: left) {
+	@include fz(14);
+	font-weight: bold;
+	line-height: 1.57;
+	color: #333333;
+	text-align: $align;
+}
+
+@mixin p_blog($align: justify) {
+	@include fz(16);
+	font-weight: 500;
+	line-height: 1.88;
+	color: #333333;
+	text-align: $align;
+}
+
+@mixin link_white($align: justify) {
+	@include fz(16);
+	font-weight: 500;
+	line-height: 1.38;
+	color: #ffffff;
+	text-align: $align;
+}
+
+@mixin link_text($align: left) {
+	@include fz(16);
+	font-weight: 500;
+	line-height: 1.38;
+	text-align: $align;
+	color: $putty;
+}
+
+@mixin caution($align: justify) {
+	@include fz(14);
+	font-weight: 500;
+	line-height: 1.38;
+	text-align: $align;
+	color: $lipstick;
+}
+
+@mixin caption($align: center) {
+	@include fz(12);
+	font-weight: 500;
+	line-height: 1.38;
+	text-align: $align;
+	color: #333333;
+}
+
+@mixin date($color: #333333, $align: justify) {
+	@include fz(12);
+	font-family: 'Open Sans', sans-serif;
+	line-height: 1.33;
+	text-align: $align;
+	color: $color;
+}
