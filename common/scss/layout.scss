@@ -17,4 +17,8 @@ body {
 	@include fz(14);
 	color: #333333;
 	line-height: 1.57;
+	@media #{$tablet} {
+	}
+	@media #{$mobile} {
+	}
 }
