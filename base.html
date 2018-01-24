@@ -7,22 +7,128 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	<meta name="format-detection" content="telephone=no">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="common/css/layout.css">
 	<link rel="stylesheet" type="text/css" href="common/css/style.css">
 	<title>ライフスタジオ</title>
 </head>
 <body>
 	<!-- ヘッター -->
-	<header>
+	<header id="global-head">
+		<div class="brand-logo"><img src="img/logo.png"></div>
 	</header>
 	<!-- /ヘッター -->
 
+	<!-- メニュー開閉ボタン -->
+	<div id="nav-toggle">
+		<div>
+			<span></span>
+			<span></span>
+		</div>
+		<div>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+	<!-- /メニュー開閉ボタン -->
+
+	<!-- メニュー -->
+	<aside id="sidebar">
+		<div class="brand-logo"><img src="img/logo.png"></div>
+		<nav id="global-nav">
+			<ul>
+				<li><a href="#">ライフ通信</a></li>
+				<li><a href="#">店舗紹介</a></li>
+				<li><a href="#">ギャラリー</a></li>
+				<li><a href="#">システム</a></li>
+				<li><a href="#">コミュニティ</a></li>
+			</ul>
+		</nav>
+		<div class="btn-default"><span><a href="#">ログイン</a></span></div>
+		<div class="btn-putty"><span><a href="#">スタジオ予約</a></span></div>
+	</aside>
+	<!-- /メニュー -->
+
 	<!-- メインコンテンツ -->
 	<main>
+		<div id="main-in">
+			<div id="main-head">
+				<h1 class="center">ログイン</h1>
+				<h1 class="sub_black_center">Login</h1>
+			</div>
+
+			<section class="inner">
+				<p>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。</p>
+				<p>またそのなかでいっしょになったたくさんのひとたち、ファゼーロとロザーロ、羊飼のミーロや、顔の赤いこどもたち、地主のテーモ、山猫博士のボーガント・デストゥパーゴなど、いまこの暗い巨きな石の建物のなかで考えていると、みんなむかし風のなつかしい青い幻燈のように思われます。では、わたくしはいつかの小さなみだしをつけながら、しずかにあの年のイーハトーヴォの五月から十月までを書きつけましょう。
+				</p>
+			</section>
+		</div><!-- /#main-in -->
 	</main>
 	<!-- /メインコンテンツ -->
 
+	<div id="overlay"></div>
+
 	<!-- フッター -->
-	<footer>
+	<footer id="global-foot">
+		<div id="footer-in">
+			<ul id="breadcrumb">
+				<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+					<a href="ホームのＵＲＬ" itemprop="url">
+						<span itemprop="title">トップ</span>
+					</a>
+				</li>
+				<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+						<span itemprop="title">ログイン</span>
+				</li>
+				<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+					<a href="子カテゴリーのＵＲＬ" itemprop="url">
+						<span itemprop="title"></span>
+					</a>
+				</li>
+			</ul>
+			<div id="information">
+				<ul>
+					<li>
+						<a href="#">
+							<span>会社概要</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span>Recruit</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span>Report</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span>サイト利用規約</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span>会員登録規約</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span>プライバシーポリシー</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			
+			<hr class="primary">
+
+			<div id="copyright">
+				<p>当サイトの画像・文章の無断転載・コピーは固くお断りいた致します。</p>
+				<p>©Life Studio All Rights Reserved.</p>
+			</div>
+
+		</div>
 	</footer>
 	<!-- /フッター -->
 
