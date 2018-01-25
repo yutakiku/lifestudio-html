@@ -1,7 +1,7 @@
-***デザイン（zeplin）***
-zpl.io/V1M8wPm
-zpl.io/2jpzAAO
-zpl.io/2EyyzqY
+***デザイン（zeplin）***  
+https://app.zeplin.io/project/5a0d9d252f1bde4ed240dd58/dashboard?  
+https://app.zeplin.io/project/5a2525679ffb95065f248fa3/dashboard?  
+https://app.zeplin.io/project/5a40a85f14fb0c00afd119c6/dashboard?  
 
 画像はzeplinのPC版のデザインからダウンロードできます。
 
