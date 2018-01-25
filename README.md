@@ -1,7 +1,9 @@
 ***デザイン（zeplin）***  
-https://app.zeplin.io/project/5a0d9d252f1bde4ed240dd58/dashboard?  
-https://app.zeplin.io/project/5a2525679ffb95065f248fa3/dashboard?  
-https://app.zeplin.io/project/5a40a85f14fb0c00afd119c6/dashboard?  
+https://app.zeplin.io/project/5a0d9d252f1bde4ed240dd58/dashboard?  (PC)  
+https://app.zeplin.io/project/5a2525679ffb95065f248fa3/dashboard?  (SP)  
+https://app.zeplin.io/project/5a40a85f14fb0c00afd119c6/dashboard?  (管理者用)  
+https://app.zeplin.io/project/5a693b60deb32d72a9a555a3  （モジュール）  
+
 
 画像はzeplinのPC版のデザインからダウンロードできます。
 
