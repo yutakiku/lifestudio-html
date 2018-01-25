@@ -240,12 +240,12 @@
 
 
 /* フォントスタイル */
-@mixin h1_standard($align: center) {
+@mixin h1_standard($color: #333333, $align: center) {
 	@include fz(26);
 	font-weight: bold;
 	text-align: $align;
 	line-height: 1.38;
-	color: #333333;
+	color: $color;
 }
 
 @mixin h1_open_sans($align: center) {
