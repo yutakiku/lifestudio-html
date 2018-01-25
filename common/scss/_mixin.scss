@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+@import "compass/css3/box";
+
 /* 文字サイズ設定 */
 @mixin fz($size) {
 	font-size: $size + px;
