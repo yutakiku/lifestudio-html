@@ -7,20 +7,20 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	<meta name="format-detection" content="telephone=no">
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="common/css/layout.css">
 	<link rel="stylesheet" type="text/css" href="common/css/style.css">
 	<title>ライフスタジオ</title>
 </head>
 <body>
 	<!-- ヘッター -->
-	<header id="global-head">
-		<div class="brand-logo"><img src="img/logo.png"></div>
+	<header>
+		<div class="brand_logo">
+			<a href="#"><img src="img/logo.png" alt="ライフスタジオ"></a>
+		</div>
 	</header>
 	<!-- /ヘッター -->
 
 	<!-- メニュー開閉ボタン -->
-	<div id="nav-toggle">
+	<div id="nav_toggle" class="sp_nav">
 		<div>
 			<span></span>
 			<span></span>
@@ -33,9 +33,9 @@
 	<!-- /メニュー開閉ボタン -->
 
 	<!-- メニュー -->
-	<aside id="sidebar">
-		<div class="brand-logo"><img src="img/logo.png"></div>
-		<nav id="global-nav">
+	<aside class="sidebar">
+		<div class="brand-logo"><a href="#"><img src="img/logo.png" alt="ライフスタジオ"></a></div>
+		<nav>
 			<ul>
 				<li><a href="#">ライフ通信</a></li>
 				<li><a href="#">店舗紹介</a></li>
@@ -48,6 +48,8 @@
 		<div class="btn-putty"><span><a href="#">スタジオ予約</a></span></div>
 	</aside>
 	<!-- /メニュー -->
+
+	<div id="overlay" class="modal_overlay"></div>
 
 	<!-- メインコンテンツ -->
 	<main>
@@ -66,14 +68,13 @@
 	</main>
 	<!-- /メインコンテンツ -->
 
-	<div id="overlay"></div>
 
 	<!-- フッター -->
-	<footer id="global-foot">
-		<div id="footer-in">
-			<ul id="breadcrumb">
+	<footer>
+		<div class="footer-in">
+			<ul class="breadcrumb">
 				<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-					<a href="ホームのＵＲＬ" itemprop="url">
+					<a href="ホームのURL" itemprop="url">
 						<span itemprop="title">トップ</span>
 					</a>
 				</li>
@@ -81,12 +82,12 @@
 						<span itemprop="title">ログイン</span>
 				</li>
 				<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-					<a href="子カテゴリーのＵＲＬ" itemprop="url">
+					<a href="子カテゴリーのURL" itemprop="url">
 						<span itemprop="title"></span>
 					</a>
 				</li>
 			</ul>
-			<div id="information">
+			<div class="information">
 				<ul>
 					<li>
 						<a href="#">
@@ -120,10 +121,10 @@
 					</li>
 				</ul>
 			</div>
-			
+
 			<hr class="primary">
 
-			<div id="copyright">
+			<div class="copyright">
 				<p>当サイトの画像・文章の無断転載・コピーは固くお断りいた致します。</p>
 				<p>©Life Studio All Rights Reserved.</p>
 			</div>

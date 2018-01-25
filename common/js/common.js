@@ -8,9 +8,9 @@ $(function () {
         }
     });
 
-    $('#nav-toggle,#overlay').on('click', function() {
+    $('#nav_toggle,#overlay').on('click', function() {
         $('body').toggleClass('open');
     });
     var url = window.location;
-        $('.global-nav a[href="'+url+'"]').addClass('active');
+    $('.global-nav a[href="'+url+'"]').addClass('active');
 });
