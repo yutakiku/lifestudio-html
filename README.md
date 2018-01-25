@@ -19,7 +19,7 @@ https://photocreate.qiita.com/shared/items/cc94440a81c93c72714f#n%E8%A1%8C%E7%9B
 
 タイトルのフォントスタイルは全てmixin化してますので、必ずこちらを使用してください。（style guide参照）
 
-style guide
+style guide  
 https://app.zeplin.io/project/5a0d9d252f1bde4ed240dd58/styleguide
 
 style guideで指定されたフォントスタイルは以下で対応できます。
@@ -129,7 +129,7 @@ style {
 }
 ```
 
-**コーディングガイドライン**
+**コーディングガイドライン**  
 https://photocreate.qiita.com/shared/items/be9e9c573d5205679e6b
 
 
@@ -139,7 +139,7 @@ https://photocreate.qiita.com/shared/items/be9e9c573d5205679e6b
 * cssのclass名に区切りをつける場合はアンダースコア（ _ ）、javascriptはキャメルケースでお願いします。
 * compassを利用しているので「_mixin.scss」に書かれたmixinだけでなく、compassのmixinもできるだけ使ってください。
 
-compassのmixin
+compassのmixin  
 http://www.webdesignleaves.com/wp/htmlcss/675/
 
 ※IE9対応などは使用しないで大丈夫ですが、css3アニメーションなどを使用する場合はcompassのmixinで書いて欲しいです。
