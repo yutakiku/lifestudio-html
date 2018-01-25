@@ -25,6 +25,10 @@ https://app.zeplin.io/project/5a0d9d252f1bde4ed240dd58/styleguide
 style guideで指定されたフォントスタイルは以下で対応できます。
 <table>
 <tr>
+<td>ガイド名</td>
+<td>スタイル記述</td>
+</tr>
+<tr>
 <td>h1.center</td>
 <td>@include h1_standard;</td>
 </tr>
