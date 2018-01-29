@@ -24,9 +24,11 @@ body {
 		text-align: center;
 		z-index: 100;
 		@media #{$tablet} {
+			position: relative;
 			width: 100%;
-			display: -webkit-flex;
-			display: flex;
+			height: 56px;
+			@include display-flex();
+			@include justify-content(space-between);
 		}
 		.brand_logo {
 			a {
@@ -54,7 +56,37 @@ body {
 					}
 				}
 			}
-
+		}
+		ul {
+			display: none;
+			@media #{$tablet} {
+				display: block;
+				@include display-flex();
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			li.btn_default {
+				@media #{$tablet} {
+					@include btn(default);
+					@include border-radius(16px);
+					margin: 16px 8px 8px 0;
+					width: 88px;
+					height: 32px;
+					@include fz(10);
+				}
+			}
+			li.btn_putty {
+				@media #{$tablet} {
+					@include btn(putty);
+					@include border-radius(16px);
+					margin: 16px 8px 8px 0;
+					width: 88px;
+					height: 32px;
+					@include fz(10);
+				
+				} 
+			}
 		}
 	}
 	// スマホメニューボタン
@@ -70,6 +102,9 @@ body {
 			box-shadow: 1px 1px 2px 0 rgba(#000, 0.2);
 			display: block;
 			@include transition(.35s ease-in-out);
+			&.is-hide {
+				 @include opacity(0);
+			}
 			div {
 				position: relative;
 				margin:0 auto;
@@ -115,6 +150,7 @@ body {
 			}
 		}
 	}
+
 	//メニュー
 	.sidebar {
 		padding-top: 116px;
@@ -202,11 +238,12 @@ body {
 		}/* /nav */
 		.btn_default {
 			@include btn(default);
+			@include border-radius(20px);
 			margin-top: 39px;
 			width: 128px;
 			height: 39px;
 			@include fz(12);
-			line-height: 12px;
+			line-height: 1;
 			@media #{$tablet} {
 				height: 40px;
 				margin-top: 16px;
@@ -214,11 +251,12 @@ body {
 		}
 		.btn_putty {
 			@include btn(putty);
+			@include border-radius(20px);
 			margin-top: 23px;
 			width: 128px;
 			height: 39px;
 			@include fz(12);
-			line-height: 12px;
+			line-height: 1;
 			@media #{$tablet} {
 				height: 40px;
 				margin-top: 16px;
@@ -247,6 +285,7 @@ body {
 			}
 			.sp_nav {
 				left: 200px;
+				@include opacity(1);
 				@include transition(.35s ease-in-out);
 				div:nth-child(1) {
 					span:nth-child(1) {
@@ -315,6 +354,91 @@ body {
 				padding: 32px 40px;
 				@media #{$tablet} {
 					padding: 20px 16px;
+				}
+				p {
+					@media #{$tablet} {
+						@include fz(12);
+						line-height: 1.5;
+						margin-bottom: 0;
+						margin-top: 18px;
+					}
+					&:first-child {
+						@media #{$tablet} {
+							margin-top: 0px;
+						}
+					}
+					&.small {
+						@media #{$tablet} {
+							@include fz(10);
+							line-height: 1.5;
+							margin-top: 4px;
+						}
+					}
+					&.medium {
+						@media #{$tablet} {
+							@include fz(14);
+							line-height: 1.42;
+						}
+					}
+					&.right {
+						@media #{$tablet} {
+							text-align: right;
+						}
+					}
+				}
+				input.login {
+					border: solid 1px #e0e0e0;
+					height: 48px;
+					width: 100%
+				}
+				.btn_default {
+					@include btn(default);
+					@include border-radius(20px);
+					margin-top: 39px;
+					width: 128px;
+					height: 39px;
+					@include fz(12);
+					line-height: 12px;
+					@media #{$tablet} {
+						width: 295px;
+						height: 40px;
+						@include fz(14);
+						line-height: 1.28;
+						margin-top: 40px;
+					}
+				}
+				.btn_putty {
+					@include btn(putty);
+					@include border-radius(20px);
+					margin-top: 39px;
+					width: 128px;
+					height: 39px;
+					@include fz(12);
+					line-height: 12px;
+					@media #{$tablet} {
+						width: 295px;
+						height: 40px;
+						@include fz(14);
+						line-height: 1.28;
+						margin-top: 40px;
+					}
+				}
+				.btn_brdblk {
+					@include btn(brdblk);
+					@include border-radius(20px);
+					margin-top: 39px;
+					width: 128px;
+					height: 39px;
+					@include fz(12);
+					line-height: 12px;
+					@media #{$tablet} {
+						width: 295px;
+						height: 40px;
+						@include fz(14);
+						line-height: 1.28;
+						margin-top: 24px;
+						margin-bottom: 20px;
+					}
 				}
 			}
 		}
@@ -445,7 +569,18 @@ body {
 	}
 }
 
-
+a {
+	color: $putty;
+	text-decoration: none;
+	&:hover {
+		text-decoration:underline;
+	}
+}
+.mt-2 {
+	@media #{$tablet} {
+		margin-top: 2px !important;
+	}
+}
 hr.primary{
 	border: 0.5px solid #f1f1f1;
 }
@@ -456,11 +591,4 @@ h1.center {
 
 h1.sub_black_center {
 	@include h1_sub($color: $text);
-}
-
-.btn_default {
-	
-}
-.btn_putty {
-	@include btn(putty);
 }
