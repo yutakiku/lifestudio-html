@@ -370,7 +370,6 @@
 	margin:0 auto;
 	text-align: center;
 	font-family: YuGo;
-	@include border-radius(20px);
 	span {
 		a {
 			font-weight: bold;
@@ -403,6 +402,16 @@
 		span {
 			a {
 				color: #ffffff;
+			}
+		}
+    }
+    @else if $type == "brdblk" {
+        color: $text;
+		background-color: #ffffff;
+		border: solid 1px $text;
+		span {
+			a {
+				color: $text;
 			}
 		}
     }
