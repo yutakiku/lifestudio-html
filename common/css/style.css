@@ -230,8 +230,8 @@ body .modal_overlay { z-index: 200; display: none; position: fixed; background: 
 body main p { margin-bottom: 1em; line-height: 1.9; }
 body main .main_in { padding-left: 200px; }
 @media screen and (max-width: 960px) { body main .main_in { padding-left: 0; width: 100%; } }
-body main .main_in .main_head { background: #f0ebe6; height: 140px; -webkit-box-pack: center; -ms-flex-pack: center; -webkit-justify-content: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center; padding: 30px 40px 40px 40px; }
-@media screen and (max-width: 960px) { body main .main_in .main_head { height: 96px; -webkit-box-pack: center; -ms-flex-pack: center; -webkit-justify-content: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center; padding: 19px 16px 25px 16px; } }
+body main .main_in .main_head { background: #f0ebe6; height: 140px; -webkit-box-pack: center; -moz-box-pack: center; -ms-flex-pack: center; -webkit-justify-content: center; justify-content: center; padding: 30px 40px 40px 40px; }
+@media screen and (max-width: 960px) { body main .main_in .main_head { height: 96px; padding: 19px 16px 25px 16px; } }
 body main .main_in .inner { padding: 32px 40px; }
 @media screen and (max-width: 960px) { body main .main_in .inner { padding: 20px 16px; } }
 @media screen and (max-width: 960px) { body main .main_in .inner p { font-size: 12px; font-size: 1.2rem; line-height: 1.5; margin-bottom: 0; margin-top: 18px; } }

@@ -27,7 +27,7 @@ body {
 			position: relative;
 			width: 100%;
 			height: 56px;
-			@include display-flex();
+			@include display-flex;
 			@include justify-content(space-between);
 		}
 		.brand_logo {
@@ -61,14 +61,14 @@ body {
 			display: none;
 			@media #{$tablet} {
 				display: block;
-				@include display-flex();
+				@include display-flex;
 				margin: 0;
 				padding: 0;
 				list-style: none;
 			}
 			li.btn_default {
 				@media #{$tablet} {
-					@include btn(default);
+					@include btn;
 					@include border-radius(16px);
 					margin: 16px 8px 8px 0;
 					width: 88px;
@@ -84,8 +84,7 @@ body {
 					width: 88px;
 					height: 32px;
 					@include fz(10);
-				
-				} 
+				}
 			}
 		}
 	}
@@ -237,7 +236,7 @@ body {
 			}
 		}/* /nav */
 		.btn_default {
-			@include btn(default);
+			@include btn;
 			@include border-radius(20px);
 			margin-top: 39px;
 			width: 128px;
@@ -328,25 +327,10 @@ body {
 			.main_head {
 				background: #f0ebe6;
 				height: 140px;
-				-webkit-box-pack: center;
-				-ms-flex-pack: center;
-				-webkit-justify-content: center;
-				justify-content: center;
-				-webkit-box-align: center;
-				-ms-flex-align: center;
-				-webkit-align-items: center;
-				align-items: center;
+				@include justify-content(center);
 				padding: 30px 40px 40px 40px;
 				@media #{$tablet} {
 					height: 96px;
-					-webkit-box-pack: center;
-					-ms-flex-pack: center;
-					-webkit-justify-content: center;
-					justify-content: center;
-					-webkit-box-align: center;
-					-ms-flex-align: center;
-					-webkit-align-items: center;
-					align-items: center;
 					padding: 19px 16px 25px 16px;
 				}
 			}
@@ -392,7 +376,7 @@ body {
 					width: 100%
 				}
 				.btn_default {
-					@include btn(default);
+					@include btn;
 					@include border-radius(20px);
 					margin-top: 39px;
 					width: 128px;
