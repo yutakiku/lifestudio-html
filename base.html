@@ -17,14 +17,16 @@
 			<a href="#"><img src="common/img/logo.png" alt="ライフスタジオ"></a>
 		</div>
 		<ul>
-			<li class="btn_default"><span><a href="#">ログイン</a></span></li>
-			<li class="btn_putty"><span><a href="#">スタジオ予約</a></span></li>
+			<li class="btn"><a href="#"><span>ログイン</span></a></li>
+			<li class="btn_putty"><a href="#"><span>スタジオ予約</span></a></li>
 		</ul>
 	</header>
 	<!-- /ヘッター -->
 
 	<!-- メニュー開閉ボタン -->
 	<div class="sp_nav">
+		<button type="button"><span></span></button>
+		<!-- 
 		<div>
 			<span></span>
 			<span></span>
@@ -33,6 +35,7 @@
 			<span></span>
 			<span></span>
 		</div>
+		-->
 	</div>
 	<!-- /メニュー開閉ボタン -->
 
@@ -48,8 +51,8 @@
 				<li><a href="#">コミュニティ</a></li>
 			</ul>
 		</nav>
-		<div class="btn_default"><span><a href="#">ログイン</a></span></div>
-		<div class="btn_putty"><span><a href="#">スタジオ予約</a></span></div>
+		<div class="btn"><a href="#"><span>ログイン</span></a></div>
+		<div class="btn_putty"><a href="#"><span>スタジオ予約</span></a></div>
 	</aside>
 	<!-- /メニュー -->
 
@@ -63,26 +66,27 @@
 				<h1 class="sub_black_center">Login</h1>
 			</div>
 
-			<section class="inner">
+			<section class="inner login">
 				<p>ご予約にはログインが必要です。会員ではない方は「<a href="#">新規会員登録</a>」より手順に従ってご登録ください。</p>
+				<ul>
+					<li><span>ユーザーID、またはメールアドレス</span>
+					<span><input type="email"></span>
+					<span>半角英数字</span></li>
+					<li><p><a href="#">ユーザーIDを忘れた方はこちら</a></p></li>
+				</ul>
+				<ul>
+					<li><span>パスワード</span>
+					<span><input type="password"></span>
+					<span>半角英数字</span></li>
+					<li><p><a href="#">パスワードを忘れた方はこちら</a></p></li>
+				</ul>
 
-				<p>ユーザーID、またはメールアドレス</p>
-				<input type="email" class="login">
-				<p class="small">半角英数字</p>
-				<p class="right medium mt-2"><a href="#">ユーザーIDを忘れた方はこちら</a></p>
-
-				<p>パスワード</p>
-				<input type="password" class="login">
-				<p class="small">半角英数字</p>
-				<p class="right medium mt-2"><a href="#">パスワードを忘れた方はこちら</a></p>
-
-				<div class="btn_default"><span><a href="#">ログイン</a></span></div>
+				<div class="btn"><a href="#"><span>ログイン</span></a></div>
 			</section>
-
+			<hr class="primary">
 			<section class="inner">
-				<hr class="primary">
-				<div class="btn_putty"><span><a href="#">新規会員登録</a></span></div>
-				<div class="btn_brdblk to_top"><span><a href="#">トップページに戻る</a></span></div>
+				<div class="btn_putty"><a href="#"><span>新規会員登録</span></a></div>
+				<div class="btn_brdblk to_top"><a href="#"><span>トップページに戻る</span></a></div>
 			</section>
 
 		</div><!-- /.main-in -->

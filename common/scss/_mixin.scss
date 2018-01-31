@@ -239,7 +239,11 @@
     align-content: $line;
 }
 
-
+@mixin flex-basis($width) {
+	-webkit-flex-basis: $width + px;
+	-ms-flex-basis: $width + px;
+    flex-basis: $width + px;
+}
 
 /* フォントスタイル */
 @mixin h1_standard($color: #333333, $align: center) {
@@ -365,13 +369,13 @@
 	color: $color;
 }
 
-@mixin btn($type) {
+@mixin btn($type: default) {
 	display: block;
 	margin:0 auto;
 	text-align: center;
 	font-family: YuGo;
-	span {
-		a {
+	a {
+		span {
 			font-weight: bold;
 			font-style: normal;
 			font-stretch: normal;
@@ -383,14 +387,18 @@
 			@include display-flex();
 			@include align-items(center);
 			@include justify-content(center);
+
+		}
+		&:hover {
+				text-decoration: none;
 		}
 	}
 	@if $type == "default" {
 		color: $putty;
 		background-color: #ffffff;
 		border: solid 1px $putty;
-		span {
-			a {
+		a {
+			span {
 				color: $putty;
 			}
 		}
@@ -399,8 +407,8 @@
         color: #ffffff;
 		background-color: $putty;
 		border: solid 1px #ffffff;
-		span {
-			a {
+		a {
+			span {
 				color: #ffffff;
 			}
 		}
@@ -409,8 +417,8 @@
         color: $text;
 		background-color: #ffffff;
 		border: solid 1px $text;
-		span {
-			a {
+		a {
+			span {
 				color: $text;
 			}
 		}
