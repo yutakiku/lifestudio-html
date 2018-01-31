@@ -89,8 +89,9 @@ body {
 	}
 	// スマホメニューボタン
 	.sp_nav {
-		z-index: 400;
+		display: none;
 		@media #{$tablet} {
+			z-index: 400;
 			position: fixed;
 			top: 478px;
 			left: 0px;
@@ -106,89 +107,62 @@ body {
 			button {
 				position: relative;
 				margin:0 auto;
-				width: 28px;
-				top:20px;
-				span {
-					width: 100%;
+				width: 100%;
+				height: 100%;
+				&::before {
+					content: "";
 					height: 2px;
-					left: 0;
+					left: 10px;
 					display: block;
 					background: #fff;
 					position: absolute;
 					@include transition(.35s ease-in-out);
-					top: 6px;
+					top: 20px;
+					width: 28px;
+				}
+				span {
+					width: 100%;
 					&::before {
 						content: "";
-						width: 100%;
+						width: 28px;
 						height: 2px;
-						left: 0;
+						left: 10px;
 						display: block;
 						background: #fff;
 						position: absolute;
 						@include transition(.35s ease-in-out);
-						top: 0;
+						top: 26px;
 					}
 					&::after {
 						content: "menu";
 						display: block;
+						position: relative; 
+						top: 18px;
+						left:10px;
+						text-align: center;
+						font-weight: bold;
+						font-style: normal;
+						font-stretch: normal;
 						color: #fff;
 						@include fz(10);
 						line-height: 12px;
+						width: 28px;
 					}
 				}
-				
 				&::after {
-					content: "";
-					top: 44px;
+					content: "close";
+					display: none;
+					position: relative; 
+					top: 18px;
+					left:10px;
 					text-align: center;
 					font-weight: bold;
 					font-style: normal;
 					font-stretch: normal;
-					}
-				
-				
-			}
-			div {
-				position: relative;
-				margin:0 auto;
-				&:nth-child(1) {
+					color: #fff;
+					@include fz(10);
+					line-height: 12px;
 					width: 28px;
-					top:20px;
-					span {
-						width: 100%;
-						height: 2px;
-						left: 0;
-						display: block;
-						background: #fff;
-						position: absolute;
-						@include transition(.35s ease-in-out);
-						&:nth-child(1) {
-							top: 0;
-						}
-						&:nth-child(2) {
-							top: 6px;
-						}
-					}
-				}
-				&:nth-child(2) {
-					top: 44px;
-					text-align: center;
-					font-weight: bold;
-					font-style: normal;
-					font-stretch: normal;
-					span {
-						color: #fff;
-						@include fz(10);
-						line-height: 12px;
-						&:nth-child(1)::before {
-							content: "menu";
-							display: block;
-						}
-						&:nth-child(2)::before {
-							content: "close";
-							display: none;
-						}
-					}
 				}
 			}
 		}
@@ -330,21 +304,25 @@ body {
 				left: 200px;
 				@include opacity(1);
 				@include transition(.35s ease-in-out);
-				div:nth-child(1) {
-					span:nth-child(1) {
-						top: 4px;
+				button {
+					&::before {
+						content: "";
+						top: 24px;
 						@include transform(rotate(45deg));
 					}
-					span:nth-child(2) {
-						top: 4px;
-						@include transform(rotate(-45deg));
+					span {
+						&::before {
+							content: "";
+							top: 24px;
+							@include transform(rotate(-45deg));
+						}
+						&::after {
+							content: "";
+							display: none;
+						}
 					}
-				}
-				div:nth-child(2) {
-					span:nth-child(1)::before {
-						display: none;
-					}
-					span:nth-child(2)::before {
+					&::after {
+						content: "close";
 						display: block;
 					}
 				}
@@ -375,7 +353,17 @@ body {
 				padding: 30px 40px 40px 40px;
 				@media #{$tablet} {
 					height: 96px;
-					padding: 19px 16px 25px 16px;
+					padding: 22px 16px 22px 16px;
+				}
+			}
+			.sub_head {
+				background: $bg;
+				height: 56px;
+				margin-top: 1px;
+				padding: 16px 0 18px 40px;
+				@media #{$tablet} {
+					height: 48px;
+					padding: 15px 0 15px 16px;
 				}
 			}
 			.inner {
@@ -386,7 +374,7 @@ body {
 				.btn {
 					@include btn;
 					@include border-radius(20px);
-					margin-top: 39px;
+					margin-top: 40px;
 					width: 400px;
 					height: 40px;
 					@include fz(12);
@@ -418,7 +406,8 @@ body {
 				.btn_brdblk {
 					@include btn(brdblk);
 					@include border-radius(20px);
-					margin-top: 39px;
+					margin-top: 24px;
+					margin-bottom: 8px;
 					width: 400px;
 					height: 40px;
 					@include fz(12);
@@ -561,118 +550,6 @@ body {
 	}
 }
 
-/* loginフォーム */
-.login {
-	p {
-		@media #{$tablet} {
-			@include fz(12);
-			line-height: 1.5;
-			margin-bottom: 0;
-			margin-top: 18px;
-		}
-		&:first-child {
-			@media #{$tablet} {
-				margin-top: 0px;
-			}
-		}
-		&:nth-child(3),&:nth-child(5) {
-			margin-left: 436px;
-			@include fz(16);
-			line-height: 1.375;
-			@media #{$tablet} {
-				@include fz(14);
-				line-height: 1.42;
-				margin-top: 2px;
-				margin-right: 0;
-			}
-		}
-	}
-	ul {
-		@include display-flex;
-		@include justify-content(space-between);
-		@include align-items(flex-start);
-		@include flex-direction(column);
-		margin: 0 auto;
-			max-width: 992px;
-			width: 82.45%;
-		@media #{$tablet} {
-			display:block;
-			margin: 0;
-			min-width: none;
-			max-width: none;
-		}
-		span {
-			&:nth-child(1) {
-				width: 240px;
-				text-align: left;
-				@media #{$tablet} {
-					@include fz(12);
-					line-height: 1.5;
-					width: 100%;
-				}
-			}
-			&:nth-child(2) {
-				margin-left: auto;
-				@media #{$tablet} {
-					margin-left: none;
-				}
-			}
-			&:nth-child(3) {
-				@include fz(12);
-				line-height: 1.5;
-				text-align: left;
-				margin-left: 16px;
-				width: 141px;
-				@media #{$tablet} {
-					@include fz(10);
-					margin-top: 4px;
-					margin-left: 0;
-					
-				}
-			}
-		}
-		li {
-			@include display-flex;
-			@include justify-content(flex-start);
-			@include align-items(center);
-
-			@media #{$tablet} {
-				display: block;
-				min-width: 343px;
-				max-width: none;
-			}
-			&:nth-child(1) {
-				@media #{$tablet} {
-					left: 0;
-					right: 0;
-					margin: 18px 0 2px 0;
-				}
-				p {
-					margin-bottom: 46px;
-					@media #{$tablet} {
-					}
-				}
-			}
-			&:nth-child(2) {
-				min-width: 595px;
-				@media #{$tablet} {
-					min-width: 343px;
-				}
-				p {
-					@include fz(16);
-					line-height: 1.375;
-					margin-left: auto;
-					@media #{$tablet} {
-						@include fz(14);
-						line-height: 1.42;
-						text-align: right;
-					}
-				}
-			}
-		}
-	}
-}
-
 a, a span {
 	color: $putty;
 	text-decoration: none;
@@ -680,17 +557,8 @@ a, a span {
 		text-decoration:underline;
 	}
 }
-input {
-	border: solid 1px #e0e0e0;
-	min-width: 368px;
-	max-width: 516px;
-	height: 48px;
-	@media #{$tablet} {
-		height: 48px;
-		width: 100%;
-		min-width: none;
-		max-width: none;
-	}
+button[type="button"]:focus {
+  outline: 0;
 }
 
 hr.primary{
@@ -704,3 +572,11 @@ h1.center {
 h1.sub_black_center {
 	@include h1_sub($color: $text);
 }
+h3 {
+	@include h3_standard;
+}
+h3.center {
+	@include h3_standard(center);
+}
+
+

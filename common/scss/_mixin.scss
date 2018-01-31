@@ -245,6 +245,18 @@
     flex-basis: $width + px;
 }
 
+@mixin flex-grow($size) {
+	-webkit-flex-grow: $size;
+	-ms-flex-grow: $size;
+    flex-grow: $size;
+}
+
+@mixin order($size) {
+	order: $size;
+	-webkit-order: $size;
+	-ms-order: $size;
+}
+
 /* フォントスタイル */
 @mixin h1_standard($color: #333333, $align: center) {
 	@include fz(26);
@@ -319,6 +331,10 @@
 	line-height: 1.57;
 	color: #333333;
 	text-align: $align;
+	@media #{$tablet} {
+		@include fz(12);
+		line-height: 1.5;
+	}
 }
 
 @mixin p_blog($align: justify) {
