@@ -5,7 +5,7 @@
 @import "config";
 @import "mixin";
 
-/* loginフォーム */
+/* baseレイアウト */
 section {
 	p {
 		@media #{$tablet} {
@@ -14,13 +14,14 @@ section {
 			margin-bottom: 0;
 			margin-top: 18px;
 		}
-		&:nth-of-type(1) {
+		&.lead {
+			margin-bottom: 40px;
 			@media #{$tablet} {
 				margin-top: 0px;
+				margin-bottom: 18px;
 			}
 		}
 	}
-
 	dl {
 		@include display-flex;
 		@include justify-content(flex-start);
@@ -29,7 +30,7 @@ section {
 		margin: 0 auto;
 		max-width: 992px;
 		width: 90%;
-		margin-bottom: 40px;
+		margin-bottom: 46px;
 		@media #{$tablet} {
 			margin: 0;
 			width: 100%;
@@ -38,20 +39,18 @@ section {
 			margin-bottom: 18px;
 		}
 		dt {
-			max-width: 240px;
-			min-width: 160px;
-			width:28%;
 			text-align: left;
 			@include fz(14);
 			line-height: 1.57;
+			white-space: nowrap;
+			padding-right: 16px;
+			width: 240px;
 			@media #{$tablet} {
 				@include fz(12);
 				line-height: 1.5;
 				width: 100%;
 				display: block;
 				margin-bottom: 4px;
-				max-width: initial;
-				min-width: initial;
 			}
 			&.required::after {
 				content: "必須";
@@ -69,52 +68,17 @@ section {
 		}
 		dd {
 			@include flex-grow(1);
+			@include display-flex;
+			@include align-items(center);
+			@media #{$tablet} {
+				display: block;
+			}
 			p {
-				width: 75%;
-				margin-right: 25%;
-				min-width: 400px;
-				@include fz(16);
-				line-height: 1.375;
-				text-align: right;
-				min-width: 595px;
-				margin-left: auto;
-				margin-bottom: 0;
-				@media #{$tablet} {
-					width: 100%;
-					margin-right: 0;
-					@include fz(14);
-					line-height: 1.42;
-					min-width: 100px;
-				}
-			}
-			span {
-				@include fz(12);
-				line-height: 1.5;
-				text-align: left;
-				padding-left: 256px;
-				margin-top: 2px;
-				@media #{$tablet} {
-					min-width: initial;
-					padding-left: 0;
-					@include fz(10);
-					line-height: 1.4;
-				}
-			}
-			&:nth-of-type(1) {
-				width: 42%;
-				margin-left: 16px;
-				@media #{$tablet} {
-					margin-left: 0;
-					width: 100%;
-				}
-			}
-			&:nth-of-type(2) {
 				@include fz(12);
 				line-height: 1.5;
 				text-align: left;
 				margin-left: 16px;
-				width: 18%;
-				min-width: 80px;
+				white-space: nowrap;
 				@media #{$tablet} {
 					@include fz(10);
 					margin-top: 4px;
@@ -122,9 +86,62 @@ section {
 					width: 100%;
 				}
 			}
-			&:nth-of-type(3) {
-				width: 100%;
-			}
+			//p {
+			//	width: 75%;
+			//	margin-right: 25%;
+			//	min-width: 400px;
+			//	@include fz(16);
+			//	line-height: 1.375;
+			//	text-align: right;
+			//	min-width: 595px;
+			//	margin-left: auto;
+			//	margin-bottom: 0;
+			//	@media #{$tablet} {
+			//		width: 100%;
+			//		margin-right: 0;
+			//		@include fz(14);
+			//		line-height: 1.42;
+			//		min-width: 100px;
+			//	}
+			//}
+			//span {
+			//	@include fz(12);
+			//	line-height: 1.5;
+			//	text-align: left;
+			//	padding-left: 256px;
+			//	margin-top: 2px;
+			//	@media #{$tablet} {
+			//		min-width: initial;
+			//		padding-left: 0;
+			//		@include fz(10);
+			//		line-height: 1.4;
+			//	}
+			//}
+			//&:nth-of-type(1) {
+			//	width: 42%;
+			//	margin-left: 16px;
+			//	@media #{$tablet} {
+			//		margin-left: 0;
+			//		width: 100%;
+			//	}
+			//}
+			//&:nth-of-type(2) {
+			//	@include fz(12);
+			//	line-height: 1.5;
+			//	text-align: left;
+			//	margin-left: 16px;
+			//	width: 18%;
+			//	min-width: 80px;
+			//	@media #{$tablet} {
+			//		@include fz(10);
+			//		margin-top: 4px;
+			//		margin-left: 0;
+			//		width: 100%;
+			//	}
+			//}
+			//&:nth-of-type(3) {
+			//	width: 100%;
+			//}
 		}
 		&.zipcode {
 			dd {
@@ -158,6 +175,113 @@ section {
 			}
 		}
 	}
+	//ログインフォーム
+	&.login {
+		padding-bottom: 40px !important;
+		border-bottom: 0.5px solid #f1f1f1;
+		dl {
+			margin-bottom: 70px;
+			@media #{$tablet} {
+				margin-bottom: 33px;
+			}
+			dd {
+				.remind_link {
+					width: 100%;
+					position: relative;
+					p {
+						margin-left: 0;
+						@include fz(16);
+						text-align: right;
+						position: absolute;
+						right: 0;
+						@media #{$tablet} {
+							@include fz(14);
+							margin-top: 15px;
+						}
+					}
+				}
+			}
+		}
+	}
+	//アカウント情報入力
+	&.account {
+		dl {
+			dd {
+				padding-right: 165px;
+				position: relative;
+				@media #{$tablet} {
+					padding-right: 0;
+				}
+				p {
+					width: 165px;
+					position: absolute;
+					right: 0;
+					top: 0;
+					bottom: 0;
+					margin: auto;
+					padding-left: 16px;
+					height: 1em;
+					@media #{$tablet} {
+						width: 100%;
+						position: relative;
+						padding-left: 0;
+						height: auto;
+					}
+				}
+			}
+			&.mobile {
+				margin-bottom: 70px;
+				@media #{$tablet} {
+					margin-bottom: 18px;
+				}
+				dd {
+					display: block;
+					p {
+						width: 100%;
+						padding-left: 0;
+						height: auto;
+						top: auto;
+						bottom: -40px;
+						height: 2.5em;
+						white-space: normal;
+						@media #{$tablet} {
+							height: auto;
+							bottom: auto;
+						}
+					}
+				}
+			}
+		}
+	}
+	//住所情報入力
+	&.address {
+		dl {
+			dd {
+				padding-right: 165px;
+				position: relative;
+				@media #{$tablet} {
+					padding-right: 0;
+				}
+				p {
+					width: 165px;
+					position: absolute;
+					right: 0;
+					top: 0;
+					bottom: 0;
+					margin: auto;
+					padding-left: 16px;
+					height: 1em;
+					@media #{$tablet} {
+						width: 100%;
+						position: relative;
+						padding-left: 0;
+						height: auto;
+					}
+				}
+			}
+		}
+	}
+	//確認画面
 	&.confirm {
 		dl {
 			border-bottom: 1px solid $btn-gray-dead;

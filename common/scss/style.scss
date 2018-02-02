@@ -329,10 +329,6 @@ body {
 		}
 	}
 	main {
-		p {
-			margin-bottom: 1em;
-			line-height: 1.9;
-		}
 		.main_in {
 			padding-left: 200px;
 			@media #{$tablet} {
@@ -359,7 +355,7 @@ body {
 					padding: 15px 0 15px 16px;
 				}
 			}
-			.inner {
+			section {
 				padding: 32px 40px;
 				@media #{$tablet} {
 					padding: 20px 16px;
@@ -565,17 +561,9 @@ h3 {
 [type="number"] {
 	width: 100%;
 	border: solid 1px #e0e0e0;
-	min-width: 200px;
-	max-width: 800px;
 	height: 48px;
 	&:disabled {
 		background: $bg;
-	}
-	@media #{$tablet} {
-		height: 48px;
-		width: 100%;
-		min-width: initial;
-		max-width: none;
 	}
 }
 
