@@ -366,7 +366,6 @@ body {
 				}
 				.btn {
 					@include btn;
-					@include border-radius(20px);
 					margin-top: 40px;
 					width: 400px;
 					height: 40px;
@@ -382,7 +381,6 @@ body {
 				}
 				.btn_putty {
 					@include btn(putty);
-					@include border-radius(20px);
 					margin-top: 8px;
 					width: 400px;
 					height: 40px;
@@ -398,7 +396,6 @@ body {
 				}
 				.btn_brdblk {
 					@include btn(brdblk);
-					@include border-radius(20px);
 					margin-top: 24px;
 					margin-bottom: 8px;
 					width: 400px;
@@ -532,6 +529,7 @@ body {
 	}
 }
 
+//グローバルスタイル
 a, a span {
 	color: $putty;
 	text-decoration: none;
@@ -559,4 +557,64 @@ h3 {
 	@include h3_standard;
 }
 
+//フォームレイアウト
+[type="text"],
+[type="password"],
+[type="email"],
+[type="tel"],
+[type="number"] {
+	width: 100%;
+	border: solid 1px #e0e0e0;
+	min-width: 200px;
+	max-width: 800px;
+	height: 48px;
+	&:disabled {
+		background: $bg;
+	}
+	@media #{$tablet} {
+		height: 48px;
+		width: 100%;
+		min-width: initial;
+		max-width: none;
+	}
+}
 
+.radio {
+	padding-left: 28px;
+	position:relative;
+	@media #{$tablet} {
+		@include fz(12);
+		line-height: 1.5;
+	}
+	& + .radio {
+		margin-left: 20px;
+	}
+	&::before{
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		width: 20px;
+		height: 20px;
+		margin: auto;
+		border: 1px solid $putty;
+		border-radius: 50%;
+	}
+	[type="radio"]:checked {
+		&::after{
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 3px;
+			width: 14px;
+			height: 14px;
+			margin: auto;
+			background: $putty;
+			border-radius: 50%;
+		}
+	}
+}

@@ -34,20 +34,16 @@ section {
 			margin: 0;
 			width: 100%;
 			display: block;
-			min-width: 343px;
+			min-width: 100%;
 			margin-bottom: 18px;
 		}
 		dt {
-			-webkit-box-sizing: border-box;
-			-ms-box-sizing: border-box;
-		    box-sizing: border-box;
 			max-width: 240px;
 			min-width: 160px;
 			width:28%;
 			text-align: left;
 			@include fz(14);
 			line-height: 1.57;
-			white-space: nowrap;
 			@media #{$tablet} {
 				@include fz(12);
 				line-height: 1.5;
@@ -69,8 +65,6 @@ section {
 				margin-left: 8px;
 				font-weight: bold;
 				text-align: center;
-				@media #{$tablet} {
-				}
 			}
 		}
 		dd {
@@ -99,7 +93,6 @@ section {
 				text-align: left;
 				padding-left: 256px;
 				margin-top: 2px;
-				white-space: nowrap;
 				@media #{$tablet} {
 					min-width: initial;
 					padding-left: 0;
@@ -107,22 +100,12 @@ section {
 					line-height: 1.4;
 				}
 			}
-			
 			&:nth-of-type(1) {
 				width: 42%;
 				margin-left: 16px;
 				@media #{$tablet} {
 					margin-left: 0;
 					width: 100%;
-				}
-				input[type="email"], input[type="password"], input[type="text"], input[type="tel"], input[type="number"] {
-					width: 100%;
-					@media #{$tablet} {
-						height: 48px;
-						width: 100%;
-						min-width: initial;
-						max-width: initial;
-					}
 				}
 			}
 			&:nth-of-type(2) {
@@ -132,7 +115,6 @@ section {
 				margin-left: 16px;
 				width: 18%;
 				min-width: 80px;
-				white-space: nowrap;
 				@media #{$tablet} {
 					@include fz(10);
 					margin-top: 4px;
@@ -142,9 +124,6 @@ section {
 			}
 			&:nth-of-type(3) {
 				width: 100%;
-			}
-			.disabled {
-				background: $bg;
 			}
 		}
 		&.zipcode {
@@ -225,57 +204,6 @@ section {
 					}
 				}
 			}
-		}
-	}
-}
-
-input[type="email"], input[type="password"], input[type="text"], input[type="tel"], input[type="number"] {
-	border: solid 1px #e0e0e0;
-	min-width: 200px;
-	max-width: 800px;
-	height: 48px;
-	@media #{$tablet} {
-		height: 48px;
-		width: 100%;
-		min-width: initial;
-		max-width: none;
-	}
-}
-
-.radio-input{
-	display: none;
-	+ label{
-		padding-left: 20px;
-		position:relative;
-		margin-right: 20px;
-		left: 8px;
-		@media #{$tablet} {
-			@include fz(12);
-			line-height: 1.5;
-		}
-		&::before{
-			content: "";
-			display: block;
-			position: absolute;
-			top: 0;
-			left: -8px;
-			width: 20px;
-			height: 20px;
-			border: 1px solid $putty;
-			border-radius: 50%;
-		}
-	}
-	&:checked + label{
-		&::after{
-			content: "";
-			display: block;
-			position: absolute;
-			top: 3px;
-			left: -5px;
-			width: 14px;
-			height: 14px;
-			background: $putty;
-			border-radius: 50%;
 		}
 	}
 }

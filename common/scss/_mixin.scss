@@ -387,6 +387,7 @@
 
 @mixin btn($type: default) {
 	display: block;
+	@include border-radius(20px);
 	margin:0 auto;
 	text-align: center;
 	font-family: YuGo;
