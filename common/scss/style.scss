@@ -1,10 +1,11 @@
 @charset "UTF-8";
 
-/* import */
+// import
 @import "compass";
 @import "config";
 @import "mixin";
 
+//グローバルスタイル
 
 html {
 	font-size:62.5%;
@@ -12,6 +13,45 @@ html {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+
+a, a span {
+	color: $putty;
+	text-decoration: none;
+	&:hover {
+		text-decoration:underline;
+	}
+}
+button[type="button"]:focus {
+  outline: 0;
+}
+
+hr.primary{
+	border: 0.5px solid #f1f1f1;
+}
+
+h1 {
+	@include h1_standard;
+	span {
+		display: block;
+		@include h1_sub($color: $text);
+	}
+}
+
+h3 {
+	@include h3_standard;
+}
+
+.btn {
+	@include btn;
+}
+.btn_putty {
+	@include btn(putty);
+}
+.btn_brdblk {
+	@include btn(brdblk);
+}
+
+//全体レイアウトスタイル
 
 body {
 	@include fz(14);
@@ -63,11 +103,9 @@ body {
 				@include display-flex;
 				margin: 0;
 				padding: 0;
-				list-style: none;
 			}
 			li.btn {
 				@media #{$tablet} {
-					@include btn;
 					@include border-radius(16px);
 					margin: 16px 8px 8px 0;
 					width: 88px;
@@ -77,7 +115,6 @@ body {
 			}
 			li.btn_putty {
 				@media #{$tablet} {
-					@include btn(putty);
 					@include border-radius(16px);
 					margin: 16px 8px 8px 0;
 					width: 88px;
@@ -136,7 +173,7 @@ body {
 					&::after {
 						content: "menu";
 						display: block;
-						position: relative; 
+						position: relative;
 						top: 18px;
 						left:10px;
 						text-align: center;
@@ -150,9 +187,9 @@ body {
 				&::after {
 					content: "close";
 					display: none;
-					position: relative; 
+					position: relative;
 					top: 18px;
-					left:10px;
+					left: 10px;
 					text-align: center;
 					font-weight: bold;
 					color: #fff;
@@ -199,7 +236,6 @@ body {
 		}
 		nav {
 			@include fz(14);
-			list-style: none;
 			font-weight: 500;
 			line-height: 1;
 			text-align: left;
@@ -216,8 +252,6 @@ body {
 			}
 			ul {
 				margin:0 auto;
-				@media #{$tablet} {
-				}
 				li {
 					position: relative;
 					height: 60px;
@@ -239,16 +273,12 @@ body {
 						}
 						&:hover, &:focus {
 							background: $bg;
-							@media #{$tablet} {
-							}
 						}
 					}
 				}
 			}
 		}/* /nav */
 		.btn {
-			@include btn;
-			@include border-radius(20px);
 			margin-top: 39px;
 			width: 128px;
 			height: 39px;
@@ -260,8 +290,6 @@ body {
 			}
 		}
 		.btn_putty {
-			@include btn(putty);
-			@include border-radius(20px);
 			margin-top: 23px;
 			width: 128px;
 			height: 39px;
@@ -360,53 +388,6 @@ body {
 				@media #{$tablet} {
 					padding: 20px 16px;
 				}
-				.btn {
-					@include btn;
-					margin-top: 40px;
-					width: 400px;
-					height: 40px;
-					@include fz(12);
-					line-height: 12px;
-					@media #{$tablet} {
-						width: 295px;
-						height: 40px;
-						@include fz(14);
-						line-height: 1.28;
-						margin-top: 40px;
-					}
-				}
-				.btn_putty {
-					@include btn(putty);
-					margin-top: 8px;
-					width: 400px;
-					height: 40px;
-					@include fz(12);
-					line-height: 12px;
-					@media #{$tablet} {
-						width: 295px;
-						height: 40px;
-						@include fz(14);
-						line-height: 1.28;
-						margin-top: 20px;
-					}
-				}
-				.btn_brdblk {
-					@include btn(brdblk);
-					margin-top: 24px;
-					margin-bottom: 8px;
-					width: 400px;
-					height: 40px;
-					@include fz(12);
-					line-height: 12px;
-					@media #{$tablet} {
-						width: 295px;
-						height: 40px;
-						@include fz(14);
-						line-height: 1.28;
-						margin-top: 24px;
-						margin-bottom: 20px;
-					}
-				}
 			}
 		}
 
@@ -428,7 +409,7 @@ body {
 				text-align: left;
 				overflow: hidden;
 				@include fz(12);
-				background: #f1f1f1;
+				background: $bg;
 				padding: 12px 40px 14px 40px;
 				height: 48px;
 				line-height: 22px;
@@ -447,7 +428,7 @@ body {
 					a {
 					    text-decoration: none;
 					    font-weight: 500;
-					    color: #c7b299;
+					    color: $putty;
 					    &:hover {
 						    text-decoration: underline;
 						}
@@ -493,7 +474,7 @@ body {
 						a {
 							text-decoration: none;
 							font-weight: 500;
-							color: #c7b299;
+							color: $putty;
 							&:hover {
 							    text-decoration: underline;
 							}
@@ -525,34 +506,6 @@ body {
 	}
 }
 
-//グローバルスタイル
-a, a span {
-	color: $putty;
-	text-decoration: none;
-	&:hover {
-		text-decoration:underline;
-	}
-}
-button[type="button"]:focus {
-  outline: 0;
-}
-
-hr.primary{
-	border: 0.5px solid #f1f1f1;
-}
-
-h1 {
-	@include h1_standard;
-	span {
-		display: block;
-		@include h1_sub($color: $text);
-	}
-}
-
-h3 {
-	@include h3_standard;
-}
-
 //フォームレイアウト
 [type="text"],
 [type="password"],
@@ -560,7 +513,7 @@ h3 {
 [type="tel"],
 [type="number"] {
 	width: 100%;
-	border: solid 1px #e0e0e0;
+	border: solid 1px $btn-gray-dead;
 	height: 48px;
 	&:disabled {
 		background: $bg;
@@ -603,6 +556,46 @@ h3 {
 			margin: auto;
 			background: $putty;
 			border-radius: 50%;
+		}
+	}
+}
+
+.check {
+	padding-left: 28px;
+	position:relative;
+	@media #{$tablet} {
+		@include fz(12);
+		line-height: 1.5;
+	}
+	& + .check {
+		margin-left: 20px;
+	}
+	&::before{
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		width: 20px;
+		height: 20px;
+		margin: auto;
+		border: 1px solid $putty;
+	}
+	[type="checkbox"]:checked {
+		&::after{
+        	position: absolute;
+        	top: -3px;
+        	bottom: 0;
+        	left: 6px;
+        	display: block;
+        	margin: auto;
+        	width: 7px;
+        	height: 11px;
+        	border-right: 2px solid $putty;
+        	border-bottom: 2px solid $putty;
+        	@include transform(rotate(45deg));
+        	content: '';
 		}
 	}
 }
