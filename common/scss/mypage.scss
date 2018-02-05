@@ -10,20 +10,18 @@ main{
 	.sub_head{
 		position: relative;
 		&.out{
-			text-align: right;
+			@include link_text(right);
 			a{
 				position: absolute;
 				right: 40px;
-				@include fz(16);
 				@media #{$tablet} {
-					right: 16px;
 					@include fz(14);
+					right: 16px;
 				}
 			}
 		}
 	}
 	section {
-
 		p {
 			@media #{$tablet} {
 				@include fz(12);
@@ -31,7 +29,7 @@ main{
 				margin-bottom: 0;
 			}
 		}
-		h4{
+		h3{
 			margin: 0 auto 16px;
 			max-width: 992px;
 			width: 90%;
@@ -39,7 +37,6 @@ main{
 				width: 100%;
 				display: block;
 				min-width: 100%;
-				@include fz(12);
 				margin-bottom: 12px;
 			}
 		}
@@ -137,11 +134,11 @@ main{
 								color: $lipstick;
 							}
 						}
-
 					}
 				}
 			}
 		}
+//		ユーザー情報
 		.user_infomation{
 			background: #f1f1f1;
 			margin: 0 -40px;
@@ -149,6 +146,12 @@ main{
 			@media #{$tablet} {
 				margin: 0 -16px;
 				padding: 0 16px;
+			}
+			h3{
+				line-height: 2.2;
+				max-width: none;
+				width: 100%;
+				margin: 0;
 			}
 			ul{
 				margin-bottom: 1px;
@@ -165,6 +168,26 @@ main{
 				}
 			}
 		}
+		.reserve_list_btn{
+			margin: 40px 0;
+			@media #{$tablet} {
+				margin: 24px 0 34px;
+			}
+		}
+		.order_list_btn{
+			margin: 40px 0 24px;
+		}
+		.shooting_list_btn{
+			margin: 0 0 40px;
+		}
+		.toppage_btn{
+			margin-top: 40px;
+			margin-bottom: 34px;
+			@media #{$tablet} {
+				margin-top: 40px;
+				margin-bottom: 34px;
+			}
+		}
 		.btn {
 			width: 400px;
 			height: 40px;
@@ -175,22 +198,8 @@ main{
 				height: 40px;
 				line-height: 1.28;
 			}
-			&.mtb24{
-				margin-bottom: 24px;
-				@media #{$tablet} {
-					margin: 0 auto 12px;
-				}
-			}
-			&.mtb40{
-				margin-bottom: 40px;
-				@media #{$tablet} {
-					margin: 0 auto 20px;
-				}
-			}
 		}
 		.btn_brdblk {
-			margin-top: 40px;
-			margin-bottom: 34px;
 			width: 400px;
 			height: 40px;
 			@include fz(14);
@@ -199,13 +208,10 @@ main{
 				width: 295px;
 				height: 40px;
 				line-height: 1.28;
-				margin-top: 24px;
-				margin-bottom: 20px;
 			}
 		}
 		.out{
-			text-align: right;
-			@include fz(16);
+			@include link_text(right);
 			@media #{$tablet} {
 				@include fz(14);
 			}
