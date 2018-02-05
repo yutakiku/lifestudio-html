@@ -6,6 +6,7 @@ $(function () {
     var url = window.location;
     $('nav a[href="'+url+'"]').addClass('current');
 
+    //スマホメニュー
     var menuHeight = $("#global_nav_btn").height(); //メニューの高さを取得
     var startPos = 0; //スクロールの基準をstartPosとします
     $(window).scroll(function(){
@@ -18,6 +19,13 @@ $(function () {
         $("#global_nav_btn").removeClass("is-hide"); //それ以外は.is-hideを削除
       }
       startPos = currentPos; //スクロールの基準を揃える
+    });
+
+    // アコーディオン
+    $('.accordion dd').hide(); //詳細非表示
+    $('.accordion dt').click(function(){ //dtクリックイベント
+      $(this).next('dd').slideDown(); //クリックされたdtの次にあるddにslideDownを実行
+      $(this).next('dd').siblings('dd').slideUp(); //クリックされたdtの次にあるdd以外のddにslideUpを実行
     });
 
 });
