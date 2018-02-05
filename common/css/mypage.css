@@ -184,7 +184,7 @@ main section ul.link_option li a:after { margin: auto; border-top: 2px solid #c7
 main section ul.link_option li a span { color: #333333; display: block; line-height: 2.2; }
 main section ul.link_option li a span:hover { text-decoration: none; }
 main section ul.link_option li a span.alert_select { font-weight: bold; color: #e91e63; }
-main section .user_infomation { background: #f1f1f1; margin: 0 -40px; }
+main section .user_infomation { background: #f1f1f1; margin: 0 -40px; padding: 0 40px; }
 @media screen and (max-width: 960px) { main section .user_infomation { margin: 0 -16px; padding: 0 16px; } }
 main section .user_infomation ul { margin-bottom: 1px; border: none; }
 main section .user_infomation ul li { border: none; }
