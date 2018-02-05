@@ -60,7 +60,7 @@ body {
 	header {
 		position: fixed;
 		color: #033560;
-		width: 200px;
+		width: 100%;
 		text-align: center;
 		z-index: 100;
 		@media #{$tablet} {
@@ -71,21 +71,12 @@ body {
 			@include justify-content(space-between);
 		}
 		.brand_logo {
-			a {
-				display: block;
-				padding: 23px 48px 31px 24px;
-				@media #{$tablet} {
-					padding: 0;
-				}
-				img {
-					width: 100%;
-					@media #{$tablet} {
-						width: 108px;
-					}
-				}
-			}
+			width: 108px;
+			float: left;
+			margin: 24px 0 18px 24px;
 			@media #{$tablet} {
-				padding: 8px 0px 0px 16px;
+				width: 100px;
+				margin: 8px 0px 0px 16px;
 				@include animation(fadeIn 1.3s ease 0s 1 normal);
 				@include keyframes(fadeIn) {
 					0% {
@@ -94,6 +85,11 @@ body {
 					100% {
 						opacity: 1
 					}
+				}
+			}
+			img {
+				width: 100%;
+				@media #{$tablet} {
 				}
 			}
 		}
@@ -120,6 +116,39 @@ body {
 					width: 88px;
 					height: 32px;
 					@include fz(10);
+				}
+			}
+		}
+		button {
+			&.close {
+				float: right;
+				margin-right: 40px;
+				margin-top: 30px;
+				height: 40px;
+				width: 40px;
+				@media #{$tablet} {
+					height: 60px;
+					width: 30px;
+					margin-right: 18px;
+					margin-top: 6px;
+				}
+				&::before {
+					content: "";
+					height: 2px;
+					display: block;
+					background: $text;
+					position: relative;
+					top: 0;
+					@include transform(rotate(45deg));
+				}
+				&::after {
+					content: "";
+					height: 2px;
+					display: block;
+					background: $text;
+					position: relative;
+					top: -2px;
+					@include transform(rotate(-45deg));
 				}
 			}
 		}
@@ -363,40 +392,49 @@ body {
 				padding-left: 0;
 				width: 100%;
 			}
-			.main_head {
-				background: #f0ebe6;
-				height: 140px;
-				@include justify-content(center);
-				padding: 30px 40px 40px 40px;
-				@media #{$tablet} {
-					height: 96px;
-					padding: 22px 16px 22px 16px;
-				}
-			}
-			.sub_head {
-				background: $bg;
-				height: 56px;
-				margin-top: 1px;
-				padding: 16px 0 18px 40px;
-				@media #{$tablet} {
-					height: 48px;
-					padding: 15px 0 15px 16px;
-				}
-			}
-			section {
-				padding: 32px 40px;
-				@media #{$tablet} {
-					padding: 20px 16px;
-				}
+		}
+		.main_head {
+			background: #f0ebe6;
+			height: 140px;
+			@include justify-content(center);
+			padding: 30px 40px 40px 40px;
+			@media #{$tablet} {
+				height: 96px;
+				padding: 22px 16px 22px 16px;
 			}
 		}
+		.sub_head {
+			background: $bg;
+			height: 56px;
+			margin-top: 1px;
+			padding: 16px 0 18px 40px;
+			@media #{$tablet} {
+				height: 48px;
+				padding: 15px 0 15px 16px;
+			}
+		}
+		.common_head {
+			background: $bg;
+			height: 106px;
+			@include justify-content(center);
+			padding: 30px 0 40px 0;
+			@media #{$tablet} {
+				height: 80px;
+				padding: 24px 0 24px 0;
+			}
 
+		}
+		section {
+			padding: 32px 40px;
+			@media #{$tablet} {
+				padding: 20px 16px;
+			}
+		}
 	}
 	footer {
 		width: 100%;
 		padding: 0px;
 		background: rgba(#fff,.8);
-		@include display-flex;
 		.footer_in {
 			width: 100%;
 			padding-left: 200px;
@@ -404,102 +442,105 @@ body {
 				padding-left: 0;
 				width:100%;
 			}
-			.breadcrumb {
-				margin-left:0;
+		}
+
+		.breadcrumb {
+			margin-left:0;
+			text-align: left;
+			overflow: hidden;
+			@include fz(12);
+			background: $bg;
+			padding: 12px 40px 14px 40px;
+			height: 48px;
+			line-height: 22px;
+			width: 100%;
+			@media #{$tablet} {
+				padding: 12px 16px 14px 16px;
+			}
+			li {
+				display:inline;
+				list-style: none;
+				font-weight: bold;
+				line-height: 1.83;
 				text-align: left;
-				overflow: hidden;
-				@include fz(12);
-				background: $bg;
-				padding: 12px 40px 14px 40px;
-				height: 48px;
-				line-height: 22px;
+				color: $text;
+				height: 22px;
+				a {
+				    text-decoration: none;
+				    font-weight: 500;
+				    color: $putty;
+				    &:hover {
+					    text-decoration: underline;
+					}
+				}
+				&::after{
+					content: '>';
+					padding: 0 3px;
+					color: #8186a0;
+				}
+				&:last-child::after{
+					content: '';
+				}
+			}
+		}
+		.information {
+			width: 100%;
+			height: 62px;
+			background-color: #ffffff;
+			padding: 18px 40px 24px 40px;
+			@media #{$tablet} {
+				height: 252px;
+				padding: 0px 16px 32px 16px;
+			}
+			ul {
+				text-align: center;
 				@media #{$tablet} {
-					width:100%;
-					padding: 12px 16px 14px 16px;
+					height: 100%;
 				}
 				li {
 					display:inline;
-					list-style: none;
+					color: $putty;
+					height: 20px;
+					@include fz(14);
 					font-weight: bold;
 					line-height: 1.83;
-					text-align: left;
-					color: $text;
-					height: 22px;
+					padding: 0 8px;
+					@media #{$tablet} {
+						display:block;
+						padding: 0;
+						position: relative;
+						margin-top:20px;
+						text-align: left;
+					}
 					a {
-					    text-decoration: none;
-					    font-weight: 500;
-					    color: $putty;
-					    &:hover {
+						text-decoration: none;
+						font-weight: 500;
+						color: $putty;
+						&:hover {
 						    text-decoration: underline;
 						}
 					}
-					&::after{
-						content: '>';
-						padding: 0 3px;
-						color: #8186a0;
-					}
-					&:last-child::after{
-						content: '';
-					}
 				}
 			}
-			.information {
-				height: 62px;
-				background-color: #ffffff;
-				padding: 18px 40px 24px 40px;
-				@media #{$tablet} {
-					height: 252px;
-					padding: 0px 16px 32px 16px;
-				}
-				ul {
-					text-align: center;
-					@media #{$tablet} {
-						height: 100%;
-					}
-					li {
-						display:inline;
-						color: $putty;
-						height: 20px;
-						@include fz(14);
-						font-weight: bold;
-						line-height: 1.83;
-						padding: 0 8px;
-						@media #{$tablet} {
-							display:block;
-							padding: 0;
-							position: relative;
-							margin-top:20px;
-							text-align: left;
-						}
-						a {
-							text-decoration: none;
-							font-weight: 500;
-							color: $putty;
-							&:hover {
-							    text-decoration: underline;
-							}
-						}
-					}
-				}
+		}
+		.copyright {
+			width: 100%;
+			height: 80px;
+			padding: 16px 40px 24px 40px;
+			@include fz(12);
+			font-weight: 500;
+			line-height: 1.67;
+			text-align: center;
+			color: $text;
+			@media #{$tablet} {
+				padding: 20px 16px 24px 16px;
+				@include fz(10);
+				line-height: 1.4;
 			}
-			.copyright {
-				height: 80px;
-				padding: 16px 40px 24px 40px;
-				@include fz(12);
-				font-weight: 500;
-				line-height: 1.67;
-				text-align: center;
-				color: $text;
-				@media #{$tablet} {
-					padding: 20px 16px 24px 16px;
-					@include fz(10);
-					line-height: 1.4;
-				}
-				a {
-					text-decoration: none;
-					&:hover {
-					    text-decoration: underline;
-					}
+			a {
+				text-decoration: none;
+				&:hover {
+				    text-decoration: underline;
 				}
 			}
 		}

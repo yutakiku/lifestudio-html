@@ -261,6 +261,80 @@ main {
 				}
 			}
 		}
+
+		//登録完了
+		&.complete {
+			p {
+				&:nth-of-type(1) {
+					@media #{$tablet} {
+						margin-top: 0;
+					}
+				}
+			}
+			h3 {
+				margin-top: 32px;
+				margin-bottom: 16px;
+				@media #{$tablet} {
+					margin-bottom: 10px;
+				}
+			}
+		}
+
+		//ID検索
+		&.search {
+			margin: 0 auto;
+		    max-width: 992px;
+		    width: 90%;
+		    @media #{$tablet} {
+		    	width: 100%;
+		    }
+			h3 {
+				margin-top: 32px;
+				margin-left: 40px;
+				margin-bottom: 40px;
+				@media #{$tablet} {
+					margin-left: 0;
+				}
+			}
+			p {
+				&:nth-of-type(1) {
+					@media #{$tablet} {
+						margin-top: 0;
+					}
+				}
+			}
+			dl {
+				margin-top: 40px;
+				margin-bottom: 0;
+				@media #{$tablet} {
+					margin-top: 18px;
+				}
+				dd {
+					padding-right: 165px;
+					position: relative;
+					@media #{$tablet} {
+						padding-right: 0;
+					}
+					p {
+						width: 165px;
+						position: absolute;
+						right: 0;
+						top: 0;
+						bottom: 0;
+						margin: auto;
+						padding-left: 16px;
+						height: 1em;
+						@media #{$tablet} {
+							width: 100%;
+							position: relative;
+							padding-left: 0;
+							height: auto;
+						}
+					}
+				}
+			}
+		}
+
 	}
 	.btn {
 		margin-top: 40px;
