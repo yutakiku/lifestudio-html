@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" type="text/css" href="../common/css/style.css">
+	<link rel="stylesheet" type="text/css" href="../common/css/reserve.css">
+	<title>ライフスタジオ</title>
+</head>
+<body>
+	<!-- ヘッター -->
+	<header>
+		<div class="brand_logo">
+			<a href="#"><img src="../common/img/logo.png" alt="ライフスタジオ"></a>
+		</div>
+		<ul>
+			<li class="btn"><a href="#"><span>ログイン</span></a></li>
+			<li class="btn_putty"><a href="#"><span>スタジオ予約</span></a></li>
+		</ul>
+	</header>
+	<!-- /ヘッター -->
+
+	<!-- メニュー開閉ボタン -->
+	<div id="global_nav_btn" class="sp_nav">
+		<button type="button"><span></span></button>
+	</div>
+	<!-- /メニュー開閉ボタン -->
+
+	<!-- メニュー -->
+	<aside class="sidebar">
+		<div class="brand_logo"><a href="#"><img src="../common/img/logo.png" alt="ライフスタジオ"></a></div>
+		<nav>
+			<ul class="nav">
+				<li><a href="#">ライフ通信</a></li>
+				<li><a href="#">店舗紹介</a></li>
+				<li><a href="#">ギャラリー</a></li>
+				<li><a href="#">システム</a></li>
+				<li><a href="#">コミュニティ</a></li>
+			</ul>
+		</nav>
+		<div class="btn"><a href="#"><span>ログイン</span></a></div>
+		<div class="btn_putty"><a href="#"><span>スタジオ予約</span></a></div>
+	</aside>
+	<!-- /メニュー -->
+
+	<div id="global_overlay" class="modal_overlay"></div>
+
+	<!-- メインコンテンツ -->
+	<main>
+		<div class="main_in">
+			<div class="common_head">
+				<h1 class="center">予約枠が確定しました</h1>
+			</div>
+
+			<section class="reserve_decision">
+				<p>スタジオからお電話にてご連絡をさせていただき、撮影内容の確認とご案内をさせていただきます。<br>
+				下記のご連絡先、撮影情報、ご家族さま情報を必ずご入力してください。</p>
+				<div class="wrap">
+					<h3>ご予約内容</h3>
+					<p><span>撮影日時：2017/11/1（水）9:00</span><span>青山店　Baby & Kids</span></p>
+					<dl>
+						<dt>携帯電話番号</dt>
+						<dd>
+							<div class="remind_link">
+								<input type="email" name="">
+								<p>連絡が可能な電話番号をもう一度確認してください。</p>
+							</div>
+						</dd>
+					</dl>
+					<dl>
+						<dt>メールアドレス</dt>
+						<dd>
+							abcdefg0123@photocreate.co.jp
+						</dd>
+					</dl>
+					<h3>撮影情報</h3>
+					<dl>
+						<dt>七五三のお着物はレンタル or お持ち込みですか？</dt>
+						<dd>
+							<label class="radio"><input type="radio" name="radio01">レンタル</label>
+							<label class="radio"><input type="radio" name="radio01">お持ち込み</label>
+						</dd>
+					</dl>
+					<dl>
+						<dt>撮影内容を選択してください</dt>
+						<dd>
+							<label class="radio"><input type="radio" name="radio01">入学・卒業</label>
+							<label class="radio"><input type="radio" name="radio01">誕生日記念</label>
+							<label class="radio"><input type="radio" name="radio01">Maternity</label>
+							<label class="radio"><input type="radio" name="radio01">Profile</label>
+						</dd>
+					</dl>
+					<dl>
+						<dt>着付け、ヘアメイクはご依頼されますか？</dt>
+						<dd>
+							<label class="check"><input type="checkbox">着付け</label>
+							<label class="check"><input type="checkbox">ヘアメイク</label>
+						</dd>
+					</dl>
+					<dl>
+						<dt>ご来店方法</dt>
+						<dd>
+							<label class="radio"><input type="radio" name="radio01">車</label>
+							<label class="radio"><input type="radio" name="radio01">電車</label>
+							<label class="radio"><input type="radio" name="radio01">自転車</label>
+							<label class="radio"><input type="radio" name="radio01">その他</label>
+						</dd>
+					</dl>
+
+					<h3>ご家族さま情報</h3>
+					<p>当日ご来店予定のご家族さまを選択してください。</p>
+					<dl>
+						<dt><label class="check"><input type="checkbox"></label></dt>
+						<dd>
+							<p>山田　太郎（Yamada Taro）</p>
+							<p><span>性別：男</span><span>間柄：本人</span></p>
+						</dd>
+					</dl>
+					<dl>
+						<dt><label class="check"><input type="checkbox"></label></dt>
+						<dd>
+							<p>山田絵里子（Yamada Eriko）</p>
+							<p><span>性別：女</span><span>間柄：子</span><span>生年月日：2010年12月12日</span></p>
+						</dd>
+					</dl>
+					<dl>
+						<dt><label class="check"><input type="checkbox"></label></dt>
+						<dd>
+							<p>山田次郎（Yamada Jiro）</p>
+							<p><span>性別：男</span><span>間柄：子</span><span>生年月日：2012年10月10日</span></p>
+						</dd>
+						<dd class="additional">
+							<p><a href="#">編集する</a></p>
+							<p><a href="#">削除する</a></p>
+						</dd>
+					</dl>
+					<p class="supplement"><a href="#"><span>ご家族さま情報を追加</span></a></p>
+					<div class="btn"><a href="#"><span>確定する</span></a></div>
+				</div>
+			</section>
+
+		</div><!-- /.main-in -->
+	</main>
+	<!-- /メインコンテンツ -->
+
+	<!-- フッター -->
+	<footer>
+		<div class="footer_in">
+			<ul class="breadcrumb">
+				<li><a href="#"><span>トップ</span></a></li>
+				<li><a href="#"><span>スタジオ予約</span></a></li>
+				<li><span>予約枠の確定</span></li>
+			</ul>
+			<div class="information">
+				<ul>
+					<li><a href="#"><span>会社概要</span></a>	</li>
+					<li><a href="#"><span>Recruit</span></a></li>
+					<li><a href="#"><span>Report</span></a></li>
+					<li><a href="#"><span>サイト利用規約</span></a></li>
+					<li><a href="#"><span>会員登録規約</span></a></li>
+					<li><a href="#"><span>プライバシーポリシー</span></a></li>
+				</ul>
+			</div>
+
+			<hr class="primary">
+
+			<div class="copyright">
+				<p>当サイトの画像・文章の無断転載・コピーは固くお断りいた致します。</p>
+				<p>&copy; Life Studio All Rights Reserved.</p>
+			</div>
+
+		</div>
+	</footer>
+	<!-- /フッター -->
+
+	<script src="../common/js/jquery-3.2.1.min.js"></script>
+	<script src="../common/js/common.js"></script>
+</body>
+</html>

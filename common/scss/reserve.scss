@@ -8,6 +8,110 @@
 // base
 main {
 	section {
+		.wrap {
+			margin: 0 auto;
+			max-width: 992px;
+			width: 90%;
+			@media #{$tablet} {
+				margin: 0;
+				width: 100%;
+				display: block;
+				min-width: 100%;
+			}
+		}
+		p {
+			@include fz(14);
+			line-height: 1.57;
+			@media #{$tablet} {
+				@include fz(12);
+				line-height: 1.5;
+			}
+		}
+		.btn {
+			margin-top: 40px;
+			width: 400px;
+			height: 40px;
+			@include fz(14);
+			line-height: 12px;
+			@media #{$tablet} {
+				width: 295px;
+				height: 40px;
+				line-height: 1.28;
+				margin-top: 40px;
+			}
+		}
+		.btn_putty {
+			margin-top: 8px;
+			width: 400px;
+			height: 40px;
+			@include fz(14);
+			line-height: 12px;
+			@media #{$tablet} {
+				width: 295px;
+				height: 40px;
+				line-height: 1.28;
+				margin-top: 20px;
+			}
+		}
+		.btn_brdblk {
+			margin-top: 24px;
+			margin-bottom: 8px;
+			width: 400px;
+			height: 40px;
+			@include fz(14);
+			line-height: 12px;
+			@media #{$tablet} {
+				width: 295px;
+				height: 40px;
+				line-height: 1.28;
+				margin-top: 24px;
+				margin-bottom: 20px;
+			}
+		}
+		dl {
+			@include display-flex;
+			@include justify-content(flex-start);
+			@include align-items(center);
+			@include flex-wrap(wrap);
+			margin: 0 auto;
+			max-width: 992px;
+			width: 90%;
+			margin-bottom: 8px;
+			padding-bottom: 16px;
+			@media #{$tablet} {
+				margin: 0;
+				width: 100%;
+				display: block;
+				min-width: 100%;
+				margin-bottom: 10px;
+				padding-bottom: 0;
+			}
+			dt {
+				text-align: left;
+				@include fz(14);
+				line-height: 1.57;
+				white-space: nowrap;
+				width: 60px;
+				@media #{$tablet} {
+					@include fz(12);
+					line-height: 1.5;
+					width: 100%;
+					display: block;
+					margin-bottom: 10px;
+				}
+			}
+			dd {
+				width: 344px;
+				margin-left: 80px;
+				@media #{$tablet} {
+					@include fz(12);
+					line-height: 1.5;
+					width: 100%;
+					margin-left: 0;
+				}
+			}
+		}
+
 		/* キャンセル待ち通知登録完了 */
 		&.reserve {
 			p {
@@ -19,20 +123,13 @@ main {
 				}
 			}
 		}
-		p {
-			@include fz(14);
-			line-height: 1.57;
-			@media #{$tablet} {
-				@include fz(12);
-				line-height: 1.5;
-			}
-		}
 
 		/* 撮影内容選択 */
 		&.reserve_details {
 			.btn {
 					margin-top: 45px;
 					@media #{$tablet} {
+						margin-top: 40px;
 					}
 				}
 				> h3 {
@@ -64,6 +161,7 @@ main {
 			}
 			dl {
 				&.accordion {
+					display: block;
 					margin: 0 auto;
 					max-width: 992px;
 					width: 90%;
@@ -110,6 +208,8 @@ main {
 						}
 					}
 					dd {
+						width: 100%;
+						margin-left: 0;
 						@media #{$tablet} {
 							display: block;
 						}
@@ -118,46 +218,270 @@ main {
 				}
 			}		
 		}
-	}
-	.btn {
-		margin-top: 40px;
-		width: 400px;
-		height: 40px;
-		@include fz(14);
-		line-height: 12px;
-		@media #{$tablet} {
-			width: 295px;
-			height: 40px;
-			line-height: 1.28;
-			margin-top: 40px;
+
+		/* 予約内容確認 */
+		&.reserve_confirm {
+			p {
+				margin-bottom: 32px;
+				@media #{$tablet} {
+					margin-bottom: 18px;
+				}
+				&.agreement_link {
+					text-align: center;
+					margin-top: 40px;
+					a {
+						text-decoration: underline;
+						color: $text;
+						@include fz(14);
+						line-height: 1.29;
+						vertical-align: bottom;
+					}
+				}
+			}
+			dl {
+				border-bottom: solid 1px $btn-gray-dead;
+				@media #{$tablet} {
+				}
+			}
 		}
-	}
-	.btn_putty {
-		margin-top: 8px;
-		width: 400px;
-		height: 40px;
-		@include fz(14);
-		line-height: 12px;
-		@media #{$tablet} {
-			width: 295px;
-			height: 40px;
-			line-height: 1.28;
-			margin-top: 20px;
-		}
-	}
-	.btn_brdblk {
-		margin-top: 24px;
-		margin-bottom: 8px;
-		width: 400px;
-		height: 40px;
-		@include fz(14);
-		line-height: 12px;
-		@media #{$tablet} {
-			width: 295px;
-			height: 40px;
-			line-height: 1.28;
-			margin-top: 24px;
-			margin-bottom: 20px;
-		}
-	}
-}
+
+		/* 予約枠確定 */
+		&.reserve_decision {
+			p {
+				@media #{$tablet} {
+				}
+				span {
+					@media #{$tablet} {
+						width: 100%;
+						display: block;
+					}
+				}
+				&.supplement {
+					max-width: 200px;
+					margin-left: auto;
+					@include fz(16);
+					line-height: 1.13;
+					text-align: right;
+					white-space: nowrap;
+					margin-top: 14px;
+					@media #{$tablet} {
+					}
+					&::before {
+						content: "";
+						background: $putty;
+						width: 16px;
+						height: 16px;
+						@include border-radius(50%);
+						display: inline-block;
+						margin-right: 4px;
+						position: relative;
+						top:1px;
+					}
+					a {
+						position: relative;
+						&::before {
+							content: "";
+							height: 2px;
+							width: 10px;
+							left: -17px;
+							top: 7px;
+							background: #fff;
+							position: absolute;
+						}
+						span {
+							&::before {
+								content: "";
+								height: 2px;
+								width: 10px;
+								left: -17px;
+								top: 7px;
+								background: #fff;
+								position: absolute;
+								@include transform(rotate(90deg));
+							}
+						}
+					}
+					
+				}
+			}
+			h3 {
+				margin-top: 24px;
+				margin-bottom: 24px;
+				@media #{$tablet} {
+					margin-top: 18px;
+					margin-bottom: 10px;
+				}
+				&:nth-of-type(n+2) {
+					margin-top: 32px;
+					margin-bottom: 16px;
+					@media #{$tablet} {
+						margin-top: 18px;
+						margin-bottom: 10px;
+					}
+				}
+			}
+			dl {
+				width: 100%;
+				margin-top: 16px;
+				padding-bottom: 0;
+				white-space: nowrap;
+				@media #{$tablet} {
+					margin-top: 18px;
+					margin-bottom: 16px;
+				}
+				&:nth-of-type(1) {
+					dt {
+						width: 84px;
+						position: relative;
+						bottom: 14px;
+						@media #{$tablet} {
+							position: static;
+							width: 100%;
+							font-weight: bold;
+						}
+					}
+					dd {
+						width: 368px;
+						margin-left: 40px;
+						@media #{$tablet} {
+							width: 100%;
+							margin-left: 0;
+						}
+					}
+					.remind_link {
+						p {
+							color: $lipstick;
+							@include fz(12);
+							line-height: 1.5;
+							text-align: left;
+							width: 100%;
+							font-weight: bold;
+							padding-top: 10px;
+							@media #{$tablet} {
+								width: 100%;
+								position: relative;
+								padding-top: 2px;
+							}
+						}
+					}
+				}
+				&:nth-of-type(2) {
+					border-bottom: 1px solid $btn-gray-dead;
+					padding-bottom: 40px;
+					@media #{$tablet} {
+						margin-top: 18px;
+						padding-bottom: 24px;
+					}
+					dt {
+						width: 84px;
+						@media #{$tablet} {
+							position: static;
+							width: 100%;
+							font-weight: bold;
+						}
+					}
+					dd {
+						width: 368px;
+						margin-left: 40px;
+						@media #{$tablet} {
+							width: 100%;
+							margin-left: 0;
+						}
+					}
+				}
+				&:nth-of-type(4) {
+					dd {
+						@media #{$tablet} {
+							@include flex-wrap(wrap);
+							@include display-flex;
+							@include justify-content(flex-start);
+						}
+						label {
+							@media #{$tablet} {
+								margin-right: 20px;
+								width: 40%;
+							}
+							&:nth-of-type(n+3) {
+								margin-top: 13px;
+							}
+						}
+						.radio + .radio {
+						    margin-left: 0;
+						}
+					}
+				}
+
+				&:nth-of-type(n+3) {
+					dt {
+						width: 100%;
+					}
+					dd {
+						width: 100%;
+						margin-left: 16px;
+						margin-top: 20px;
+						@media #{$tablet} {
+							margin-top: 15px;
+							margin-left: 0;
+						}
+					}
+				}
+				&:nth-of-type(n+7) {
+					@include align-items(flex-start);
+					@include flex-wrap(nowrap);
+					border: 1px solid $putty;
+					height: 76px;
+					@media #{$tablet} {
+						height: 68px;
+					}
+					dt {
+						margin: 28px 40px;
+						width: 20px;
+						@media #{$tablet} {
+						}
+					}
+					dd {
+						width: auto;
+						margin-top: 0;
+						margin-left: 0;
+						@media #{$tablet} {
+						}
+						p {
+							&:nth-of-type(1) {
+								margin-top: 12px;
+								margin-bottom: 8px;
+								@media #{$tablet} {
+								}
+							}
+							&:nth-of-type(2) {
+								margin-bottom: 16px;
+								@media #{$tablet} {
+								}
+								span {
+									margin-right: 32px;
+								}
+							}
+						}
+						&.additional {
+							margin-top: 42px;
+							margin-right: 40px;
+							margin-left: auto;
+							@include display-flex;
+							@media #{$tablet} {
+							}
+							p {
+								@include fz(16);
+								line-height: 1.13;
+								margin: 0;
+
+								&:nth-of-type(2) {
+									margin-left: 32px;
+								}
+							}
+						}
+					}
+				}
+			}
+		} /* /&.reserve_decision */
+
+	} /* /section */
+} /* /main */
