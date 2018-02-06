@@ -10,28 +10,35 @@ main{
 	.sub_head{
 		position: relative;
 		&.out{
-			text-align: right;
+			@include link_text(right);
 			a{
 				position: absolute;
 				right: 40px;
-				@include fz(16);
 				@media #{$tablet} {
-					right: 16px;
 					@include fz(14);
+					right: 16px;
 				}
 			}
 		}
 	}
 	section {
-
 		p {
 			@media #{$tablet} {
 				@include fz(12);
 				line-height: 1.5;
 				margin-bottom: 0;
 			}
+			&.lead{
+				margin-bottom: 32px;
+				@media #{$tablet} {
+					margin-bottom: 14px;
+				}
+				span{
+					color: $putty;
+				}
+			}
 		}
-		h4{
+		h3{
 			margin: 0 auto 16px;
 			max-width: 992px;
 			width: 90%;
@@ -39,11 +46,21 @@ main{
 				width: 100%;
 				display: block;
 				min-width: 100%;
-				@include fz(12);
 				margin-bottom: 12px;
 			}
 		}
-//		スタジオ予約状況リスト
+		.notice{
+			margin: 0 auto;
+			max-width: 992px;
+			width: 90%;
+			line-height: 1.7;
+			@media #{$tablet} {
+				width: 100%;
+				display: block;
+				min-width: 100%;
+			}
+		}
+//		リストの設定
 		ul{
 			margin: 0 auto;
 			max-width: 992px;
@@ -76,6 +93,9 @@ main{
 						display: block;
 					}
 				}
+				&.just{
+					width: 95%;
+				}
 			}
 			.status{
 				width: 20%;
@@ -106,7 +126,6 @@ main{
 					}
 				}
 			}
-//		注文状況リスト
 			&.link_option{
 				li{
 					padding: 10px 0;
@@ -137,17 +156,48 @@ main{
 								color: $lipstick;
 							}
 						}
-
 					}
+				}
+			}
+			&.detail_option{
+				border: none;
+				margin-top: -8px;
+				span{
+					display: block;
+					line-height: 2.2;
+				}
+			}
+			&.reserve_status_option{
+				span{
+					margin-right: 10px;
+					&:last-child{
+						margin: 0;
+					}
+					@media #{$tablet} {
+						margin: 0;
+					}
+				}
+			}
+			&.reserve_history_option{
+				span{
+					display: block;
+					line-height: 2.2;
 				}
 			}
 		}
 		.user_infomation{
 			background: #f1f1f1;
 			margin: 0 -40px;
+			padding: 0 40px;
 			@media #{$tablet} {
 				margin: 0 -16px;
 				padding: 0 16px;
+			}
+			h3{
+				line-height: 2.2;
+				max-width: none;
+				width: 100%;
+				margin: 0;
 			}
 			ul{
 				margin-bottom: 1px;
@@ -164,6 +214,28 @@ main{
 				}
 			}
 		}
+//		/リストの設定
+//		ボタンエリア
+		.reserve_list_btn{
+			margin: 40px 0;
+			@media #{$tablet} {
+				margin: 24px 0 34px;
+			}
+		}
+		.order_list_btn{
+			margin: 40px 0 24px;
+		}
+		.shooting_list_btn{
+			margin: 0 0 40px;
+		}
+		.reverse_btn{
+			margin-top: 40px;
+			margin-bottom: 34px;
+			@media #{$tablet} {
+				margin-top: 40px;
+				margin-bottom: 34px;
+			}
+		}
 		.btn {
 			width: 400px;
 			height: 40px;
@@ -174,22 +246,8 @@ main{
 				height: 40px;
 				line-height: 1.28;
 			}
-			&.mtb24{
-				margin-bottom: 24px;
-				@media #{$tablet} {
-					margin: 0 auto 12px;
-				}
-			}
-			&.mtb40{
-				margin-bottom: 40px;
-				@media #{$tablet} {
-					margin: 0 auto 20px;
-				}
-			}
 		}
 		.btn_brdblk {
-			margin-top: 40px;
-			margin-bottom: 34px;
 			width: 400px;
 			height: 40px;
 			@include fz(14);
@@ -198,16 +256,14 @@ main{
 				width: 295px;
 				height: 40px;
 				line-height: 1.28;
-				margin-top: 24px;
-				margin-bottom: 20px;
 			}
 		}
 		.out{
-			text-align: right;
-			@include fz(16);
+			@include link_text(right);
 			@media #{$tablet} {
 				@include fz(14);
 			}
 		}
+//		/ボタンエリア
 	}
 }
