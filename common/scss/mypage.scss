@@ -28,6 +28,15 @@ main{
 				line-height: 1.5;
 				margin-bottom: 0;
 			}
+			&.lead{
+				margin-bottom: 32px;
+				@media #{$tablet} {
+					margin-bottom: 14px;
+				}
+				span{
+					color: $putty;
+				}
+			}
 		}
 		h3{
 			margin: 0 auto 16px;
@@ -40,7 +49,18 @@ main{
 				margin-bottom: 12px;
 			}
 		}
-//		スタジオ予約状況リスト
+		.notice{
+			margin: 0 auto;
+			max-width: 992px;
+			width: 90%;
+			line-height: 1.7;
+			@media #{$tablet} {
+				width: 100%;
+				display: block;
+				min-width: 100%;
+			}
+		}
+//		リストの設定
 		ul{
 			margin: 0 auto;
 			max-width: 992px;
@@ -73,6 +93,9 @@ main{
 						display: block;
 					}
 				}
+				&.just{
+					width: 95%;
+				}
 			}
 			.status{
 				width: 20%;
@@ -103,7 +126,6 @@ main{
 					}
 				}
 			}
-//		注文状況リスト
 			&.link_option{
 				li{
 					padding: 10px 0;
@@ -137,8 +159,32 @@ main{
 					}
 				}
 			}
+			&.detail_option{
+				border: none;
+				margin-top: -8px;
+				span{
+					display: block;
+					line-height: 2.2;
+				}
+			}
+			&.reserve_status_option{
+				span{
+					margin-right: 10px;
+					&:last-child{
+						margin: 0;
+					}
+					@media #{$tablet} {
+						margin: 0;
+					}
+				}
+			}
+			&.reserve_history_option{
+				span{
+					display: block;
+					line-height: 2.2;
+				}
+			}
 		}
-//		ユーザー情報
 		.user_infomation{
 			background: #f1f1f1;
 			margin: 0 -40px;
@@ -168,6 +214,8 @@ main{
 				}
 			}
 		}
+//		/リストの設定
+//		ボタンエリア
 		.reserve_list_btn{
 			margin: 40px 0;
 			@media #{$tablet} {
@@ -180,7 +228,7 @@ main{
 		.shooting_list_btn{
 			margin: 0 0 40px;
 		}
-		.toppage_btn{
+		.reverse_btn{
 			margin-top: 40px;
 			margin-bottom: 34px;
 			@media #{$tablet} {
@@ -216,5 +264,6 @@ main{
 				@include fz(14);
 			}
 		}
+//		/ボタンエリア
 	}
 }
