@@ -168,8 +168,9 @@ hr.primary { border: 0.5px solid #f1f1f1; }
 
 h1 { font-size: 26px; font-size: 2.6rem; font-weight: bold; text-align: center; line-height: 1.38; color: #333333; }
 @media screen and (max-width: 960px) { h1 { font-size: 22px; font-size: 2.2rem; line-height: 1.27; } }
-h1 span { display: block; font-size: 16px; font-size: 1.6rem; font-family: 'Open Sans', sans-serif; line-height: 1.25; text-align: center; color: #333333; font-weight: normal; }
+h1 span { display: block; font-size: 16px; font-size: 1.6rem; font-family: 'Open Sans', sans-serif; line-height: 1.25; text-align: center; color: #333333; font-weight: normal; margin-top: 14px; }
 @media screen and (max-width: 960px) { h1 span { font-size: 12px; font-size: 1.2rem; line-height: 1.33; } }
+@media screen and (max-width: 960px) { h1 span { margin-top: 8px; } }
 
 h3 { font-size: 14px; font-size: 1.4rem; font-weight: bold; line-height: 1.57; color: #333333; text-align: left; }
 @media screen and (max-width: 960px) { h3 { font-size: 12px; font-size: 1.2rem; line-height: 1.5; } }
@@ -211,7 +212,7 @@ body header button.close::before { content: ""; height: 2px; display: block; bac
 body header button.close::after { content: ""; height: 2px; display: block; background: #333333; position: relative; top: -2px; -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); -webkit-transform: rotate(-45deg); transform: rotate(-45deg); }
 body .sp_nav { display: none; }
 @media screen and (max-width: 960px) { body .sp_nav { z-index: 400; position: fixed; top: 478px; left: 0px; width: 48px; height: 64px; background-color: #c7b299; box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.2); display: block; -moz-transition: ease-in-out 0.35s; -o-transition: ease-in-out 0.35s; -webkit-transition: ease-in-out 0.35s; transition: ease-in-out 0.35s; }
-  body .sp_nav.is-hide { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; }
+  body .sp_nav.is-hide { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; pointer-events: none; }
   body .sp_nav button { position: relative; margin: 0 auto; width: 100%; height: 100%; }
   body .sp_nav button::before { content: ""; height: 2px; left: 10px; display: block; background: #fff; position: absolute; -moz-transition: ease-in-out 0.35s; -o-transition: ease-in-out 0.35s; -webkit-transition: ease-in-out 0.35s; transition: ease-in-out 0.35s; top: 20px; width: 28px; }
   body .sp_nav button span { width: 100%; }
