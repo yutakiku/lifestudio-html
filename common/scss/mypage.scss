@@ -9,6 +9,7 @@
 main{
 	.sub_head{
 		position: relative;
+		z-index: -1;
 		&.out{
 			@include link_text(right);
 			a{
@@ -29,7 +30,7 @@ main{
 				margin-bottom: 0;
 			}
 			&.lead{
-				margin-bottom: 32px;
+				margin-bottom: 40px;
 				@media #{$tablet} {
 					margin-bottom: 14px;
 				}
@@ -60,13 +61,414 @@ main{
 				min-width: 100%;
 			}
 		}
+//		写真選択画面
+		.photo_select_info{
+			margin: 0 auto;
+			max-width: 992px;
+			width: 90%;
+			text-align: center;
+			@media #{$tablet} {
+				width: 100%;
+				display: block;
+				min-width: 100%;
+				img{
+					width: 100%;
+				}
+			}
+			p{
+				text-align: left;
+				&.title{
+					margin: 0 0 16px;
+					@media #{$tablet} {
+						margin: 0 0 8px;
+					}
+					span{
+						margin-right: 10px;
+						@media #{$tablet} {
+							display: block;
+							margin: 0;
+						}
+					}
+				}
+				&.item{
+					font-weight: bold;
+					margin: 0 0 8px;
+					@media #{$tablet} {
+						margin: 0 0 4px;
+					}
+				}
+				&.price{
+					margin: 0 0 24px;
+				}
+			}
+		}
+		.about_product{
+			margin: 8px -40px 40px;
+			padding: 0 40px;
+			border-bottom: 1px solid $btn-gray-dead;
+			@include fz(17);
+			@media #{$tablet} {
+				@include fz(15);
+				margin: 8px -16px 16px;
+				padding: 0 16px;
+			}
+			span{
+				display: block;
+				margin: 0 auto 8px;
+				max-width: 992px;
+				width: 90%;
+				text-align: right;
+				@media #{$tablet} {
+					width: 100%;
+					min-width: 100%;
+					text-align: left;
+				}
+			}
+		}
+		.photo_select_detail{
+			margin: 0 auto 24px;
+			max-width: 992px;
+			width: 90%;
+			@media #{$tablet} {
+				width: 100%;
+				min-width: 100%;
+			}
+			ul{
+				width: 100%;
+				border: none;
+				margin: 16px 0 8px;
+				@include display-flex;
+				@include flex-wrap(wrap);
+				li{
+					width: 120px;
+					height: 120px;
+					border: none;
+					margin-right: 24px;
+					padding: 0;
+					position: relative;
+					&:last-child{
+						margin-right: 0;
+					}
+					@media #{$tablet} {
+						width: 80px;
+						height: 80px;
+						margin-right: 16px;
+					}
+					img{
+						@include abs-center;
+						max-width: 100%;
+						max-height: 100%;
+					}
+				}
+			}
+			.btn_small{
+				margin-left: 20px;
+				@media #{$tablet} {
+					width: 80px;
+					margin: 0;
+				}
+			}
+			.caution{
+				margin: 16px 0 ;
+				@include fz(12);
+			}
+		}
+		.remarks{
+			margin: 0 auto 24px;
+			max-width: 992px;
+			width: 90%;
+			@media #{$tablet} {
+				width: 100%;
+				min-width: 100%;
+			}
+			p{
+				margin-bottom: 8px;
+			}
+		}
+		.photo_select{
+			@include display-flex;
+			@include flex-wrap(wrap);
+			max-width: none;
+			width: auto;
+			margin: 0 -40px;
+			@media #{$tablet} {
+				margin: 0 -16px;
+			}
+			li{
+				width: 20%;
+				padding-top: 20%;
+				border-bottom: 1px solid $btn-gray-dead;
+				border-right: 1px solid $btn-gray-dead;
+				position: relative;
+				&:nth-child(5n){
+					border-right: none;
+				}
+				@media #{$tablet} {
+					width: 33.3333%;
+					padding-top: 33.3333%;
+					&:nth-child(5n){
+						border-right: 1px solid $btn-gray-dead;
+					}
+					&:nth-child(3n){
+						border-right: none;
+					}
+				}
+				a{
+					display: block;
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					top: 0;
+					left: 0;
+				}
+				span{
+					display: block;
+					width: 32px;
+					height: 32px;
+					border-radius: 32px;
+					position: absolute;
+					bottom: 8px;
+					right: 8px;
+					&:after{
+						display: block;
+						content: '';
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						width: 18px;
+						height: 10px;
+						margin-top: -7px;
+						margin-left: -9px;
+						/* border-radius: 1px; */
+						-webkit-transform: rotate(-45deg);
+						transform: rotate(-45deg);
+					}
+					&.photo_check{
+						background: $putty;
+						&:after{
+							border-left: 2px solid #fff;
+							border-bottom: 2px solid #fff;
+						}
+					}
+					&.photo_checked{
+						background: #fff;
+						border: 2px solid $putty;
+						&:after{
+							border-left: 2px solid $putty;
+							border-bottom: 2px solid $putty;
+						}
+					}
+				}
+				img{
+					@include abs-center;
+					max-width: 100%;
+					max-height: 100%;
+				}
+			}
+		}
+		.modal_overlay {
+			z-index: 9997;
+			overflow: auto;
+			width: 100%;
+			height: 100%;
+			position: fixed;
+			top: 0;
+			left: 0;
+			display: flex;
+			background-color: rgba(0,0,0,0.5);
+			.modal_wrap{
+				z-index: 9999;
+				align-self: center;
+				background-color: #fff;
+				padding: 40px 50px;
+				width: 60%;
+				margin: 20px auto;
+			}
+		}
+//		Form
+		dl {
+			@include display-flex;
+			@include justify-content(flex-start);
+			@include align-items(center);
+			@include flex-wrap(wrap);
+			margin: 0 auto;
+			max-width: 992px;
+			width: 90%;
+			margin-bottom: 46px;
+			@media #{$tablet} {
+				margin: 0;
+				width: 100%;
+				display: block;
+				min-width: 100%;
+				margin-bottom: 18px;
+			}
+			dt {
+				text-align: left;
+				@include fz(14);
+				line-height: 1.57;
+				white-space: nowrap;
+				padding-right: 16px;
+				width: 240px;
+				@media #{$tablet} {
+					@include fz(12);
+					line-height: 1.5;
+					width: 100%;
+					display: block;
+					margin-bottom: 4px;
+				}
+				&.required::after {
+					content: "±Øíš";
+					@include fz(10);
+					line-height: 1;
+					color: #ffffff;
+					width: 32px;
+					height: 16px;
+					padding: 2px 6px 2px 6px;
+					background-color: $lipstick;
+					margin-left: 8px;
+					font-weight: bold;
+					text-align: center;
+				}
+			}
+			dd {
+				@include flex-grow(1);
+				@include display-flex;
+				@include align-items(center);
+				@media #{$tablet} {
+					display: block;
+				}
+				p {
+					@include fz(12);
+					line-height: 1.5;
+					text-align: left;
+					margin-left: 16px;
+					white-space: nowrap;
+					@media #{$tablet} {
+						@include fz(10);
+						margin-top: 4px;
+						margin-left: 0;
+						width: 100%;
+					}
+				}
+			}
+		}
+		//アカウント情報
+		&.account {
+			dl {
+				dd {
+					padding-right: 165px;
+					position: relative;
+					@media #{$tablet} {
+						padding-right: 0;
+					}
+					p {
+						width: 165px;
+						position: absolute;
+						right: 0;
+						top: 0;
+						bottom: 0;
+						margin: auto;
+						padding-left: 16px;
+						height: 1em;
+						@media #{$tablet} {
+							width: 100%;
+							position: relative;
+							padding-left: 0;
+							height: auto;
+						}
+					}
+				}
+				&.mobile {
+					margin-bottom: 70px;
+					@media #{$tablet} {
+						margin-bottom: 18px;
+					}
+					dd {
+						display: block;
+						p {
+							width: 100%;
+							padding-left: 0;
+							height: auto;
+							top: auto;
+							bottom: -40px;
+							height: 2.5em;
+							white-space: normal;
+							@media #{$tablet} {
+								height: auto;
+								bottom: auto;
+							}
+						}
+					}
+				}
+			}
+		}
+		//住所情報
+		&.address {
+			dl {
+				dd {
+					padding-right: 165px;
+					position: relative;
+					@media #{$tablet} {
+						padding-right: 0;
+					}
+					p {
+						width: 165px;
+						position: absolute;
+						right: 0;
+						top: 0;
+						bottom: 0;
+						margin: auto;
+						padding-left: 16px;
+						height: 1em;
+						@media #{$tablet} {
+							width: 100%;
+							position: relative;
+							padding-left: 0;
+							height: auto;
+						}
+					}
+				}
+				&.zipcode {
+					dd {
+						position: relative;
+						@media #{$tablet} {
+							padding-right: 120px;
+						}
+						input {
+							margin-right: 24px;
+							@media #{$tablet} {
+								margin-right: 0;
+							}
+						}
+						button {
+							width: 120px;
+							height: 48px;
+							background-color: $putty;
+							@include fz(12);
+							line-height: 1.5;
+							text-align: center;
+							padding: 15px 0 15px 0;
+							color: #ffffff;
+							display: block;
+							@media #{$tablet} {
+								width: 96px;
+								position: absolute;
+								top: 0;
+								right: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+//		/Form
 //		リストの設定
 		ul{
 			margin: 0 auto;
 			max-width: 992px;
 			width: 90%;
 			margin-bottom: 40px;
-			border-top: 1px solid #e0e0e0;
+			border-top: 1px solid $btn-gray-dead;
 			@media #{$tablet} {
 				margin: 0;
 				width: 100%;
@@ -81,7 +483,7 @@ main{
 				@include flex-wrap(wrap);
 				width: 100%;
 				padding: 8px 0;
-				border-bottom: 1px solid #e0e0e0;
+				border-bottom: 1px solid $btn-gray-dead;
 			}
 			.subject{
 				width: 75%;
@@ -104,26 +506,6 @@ main{
 				@media #{$tablet} {
 					width: 35%;
 					line-height: 32px;
-				}
-				.btn_small{
-					width: 80px;
-					height: 40px;
-					background-color: $putty;
-					line-height: 1.6;
-					text-align: center;
-					vertical-align: bottom;
-					padding: 10px 0;
-					color: #ffffff;
-					display: inline-block;
-					&:hover{
-						text-decoration: none;
-					}
-					@media #{$tablet} {
-						width: 64px;
-						height: 32px;
-						padding: 8px 0;
-						@include fz(12);
-					}
 				}
 			}
 			&.link_option{
@@ -256,6 +638,34 @@ main{
 				width: 295px;
 				height: 40px;
 				line-height: 1.28;
+			}
+		}
+		.btn_small{
+			width: 80px;
+			height: 40px;
+			background-color: $putty;
+			line-height: 1.6;
+			text-align: center;
+			vertical-align: bottom;
+			padding: 10px 0;
+			color: #ffffff;
+			display: inline-block;
+			&:hover{
+				text-decoration: none;
+			}
+			@media #{$tablet} {
+				width: 64px;
+				height: 32px;
+				padding: 8px 0;
+				@include fz(12);
+			}
+		}
+		.edit_btns{
+			.btn{
+				margin: 40px auto 24px;
+			}
+			.btn_brdblk{
+				margin: 0 auto 40px;
 			}
 		}
 		.out{
