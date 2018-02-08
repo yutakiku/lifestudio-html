@@ -161,12 +161,6 @@ main section .wrap { margin: 0 auto; max-width: 992px; width: 90%; }
 @media screen and (max-width: 960px) { main section .wrap { margin: 0; width: 100%; display: block; min-width: 100%; } }
 main section p { font-size: 14px; font-size: 1.4rem; line-height: 1.57; }
 @media screen and (max-width: 960px) { main section p { font-size: 12px; font-size: 1.2rem; line-height: 1.5; } }
-main section .btn { margin-top: 40px; width: 400px; height: 40px; font-size: 14px; font-size: 1.4rem; line-height: 12px; }
-@media screen and (max-width: 960px) { main section .btn { width: 295px; height: 40px; line-height: 1.28; margin-top: 40px; } }
-main section .btn_putty { margin-top: 8px; width: 400px; height: 40px; font-size: 14px; font-size: 1.4rem; line-height: 12px; }
-@media screen and (max-width: 960px) { main section .btn_putty { width: 295px; height: 40px; line-height: 1.28; margin-top: 20px; } }
-main section .btn_brdblk { margin-top: 24px; margin-bottom: 8px; width: 400px; height: 40px; font-size: 14px; font-size: 1.4rem; line-height: 12px; }
-@media screen and (max-width: 960px) { main section .btn_brdblk { width: 295px; height: 40px; line-height: 1.28; margin-top: 24px; margin-bottom: 20px; } }
 main section dl { display: -webkit-box; display: -moz-box; display: -ms-box; display: box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-pack: start; -moz-box-pack: start; -ms-flex-pack: start; -webkit-justify-content: flex-start; justify-content: flex-start; -webkit-box-align: center; -moz-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; margin: 0 auto; max-width: 992px; width: 90%; margin-bottom: 8px; padding-bottom: 16px; }
 @media screen and (max-width: 960px) { main section dl { margin: 0; width: 100%; min-width: 100%; margin-bottom: 10px; padding-bottom: 0; } }
 main section dl dt { text-align: left; font-size: 14px; font-size: 1.4rem; line-height: 1.57; white-space: nowrap; width: 60px; }
@@ -273,3 +267,43 @@ main section.waiting_list dl dt.active::before { content: ""; height: 2px; width
 main section.waiting_list dl dt.active::after { content: ""; height: 2px; width: 8px; top: 18px; right: 25px; background: #c7b299; position: absolute; -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -webkit-transform: rotate(45deg); transform: rotate(45deg); -moz-transition: ease-in-out 0.35s; -o-transition: ease-in-out 0.35s; -webkit-transition: ease-in-out 0.35s; transition: ease-in-out 0.35s; }
 main section.waiting_list dl dd { width: 100%; margin-left: 32px; }
 main section.waiting_list dl dd label { width: 100%; display: block; margin-top: 16px; }
+
+body .modal { display: block; }
+body .modal .container_reserve { background: #ffffff; width: 60%; min-width: 640px; height: auto; position: fixed; top: 20%; left: 50%; margin-left: -30%; padding: 32px 40px 40px 40px; display: -webkit-box; display: -moz-box; display: -ms-box; display: box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-pack: start; -moz-box-pack: start; -ms-flex-pack: start; -webkit-justify-content: flex-start; justify-content: flex-start; -webkit-box-align: start; -moz-box-align: start; -ms-flex-align: start; -webkit-align-items: flex-start; align-items: flex-start; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; }
+@media screen and (max-width: 960px) { body .modal .container_reserve { width: 90%; margin-left: -45%; min-width: 288px; padding: 18px 16px; } }
+body .modal .container_reserve dl { margin-bottom: 16px; }
+body .modal .container_reserve dl.name { width: 50%; min-width: 280px; padding-right: 40px; }
+@media screen and (max-width: 960px) { body .modal .container_reserve dl.name { width: 100%; padding-right: 0; } }
+body .modal .container_reserve dl.name dt { padding-bottom: 8px; }
+body .modal .container_reserve dl.name dd .remind p { font-size: 12px; font-size: 1.2rem; line-height: 1.5; text-align: left; width: 100%; padding-top: 2px; }
+body .modal .container_reserve dl.gender { width: 30%; min-width: 176px; }
+@media screen and (max-width: 960px) { body .modal .container_reserve dl.gender { width: 50%; min-width: 96px; padding-right: 18px; } }
+body .modal .container_reserve dl.gender dt { padding-bottom: 22px; }
+body .modal .container_reserve dl.gender dd { padding-right: 40px; }
+body .modal .container_reserve dl.relation { min-width: 120px; }
+@media screen and (max-width: 960px) { body .modal .container_reserve dl.relation { min-width: 96px; } }
+body .modal .container_reserve dl.relation dt { padding-bottom: 8px; }
+body .modal .container_reserve dl.relation dd label { position: relative; }
+body .modal .container_reserve dl.relation dd label::after { display: block; content: " "; position: absolute; width: 8px; height: 6px; right: 16px; top: 40%; border-top: 6px solid #333333; border-right: 4px solid transparent; border-left: 4px solid transparent; pointer-events: none; }
+body .modal .container_reserve dl.relation dd label select { -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0; border: solid 1px #e0e0e0; padding-left: 16px; max-width: 120px; }
+body .modal .container_reserve dl.birth { width: 100%; margin-bottom: 0; }
+body .modal .container_reserve dl.birth dt { padding-bottom: 16px; }
+body .modal .container_reserve dl.birth dd { min-width: 392px; }
+body .modal .container_reserve dl.birth dd label { position: relative; }
+body .modal .container_reserve dl.birth dd label::after { display: block; content: " "; position: absolute; width: 8px; height: 6px; right: 16px; top: 40%; border-top: 6px solid #333333; border-right: 4px solid transparent; border-left: 4px solid transparent; pointer-events: none; }
+body .modal .container_reserve dl.birth dd label select { -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0; border: solid 1px #e0e0e0; padding-left: 16px; max-width: 120px; }
+@media screen and (max-width: 960px) { body .modal .container_reserve dl.birth dd { min-width: initial; } }
+@media screen and (max-width: 960px) { body .modal .container_reserve dl.birth dd select { width: 96px; } }
+body .modal .container_reserve dl.birth dd label { margin-right: 16px; }
+@media screen and (max-width: 960px) { body .modal .container_reserve dl.birth dd label { margin-right: 8px; } }
+body .modal .container_reserve dl.btn_space { width: 100%; margin: 0 auto; }
+body .modal button.close { position: fixed; top: 15%; right: 15%; height: 40px; width: 40px; }
+@media screen and (max-width: 960px) { body .modal button.close { height: 24px; width: 24px; right: 5%; } }
+body .modal button.close::before { content: ""; height: 2px; display: block; background: #ffffff; position: relative; top: 0; -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -webkit-transform: rotate(45deg); transform: rotate(45deg); }
+body .modal button.close::after { content: ""; height: 2px; display: block; background: #ffffff; position: relative; top: -2px; -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); -webkit-transform: rotate(-45deg); transform: rotate(-45deg); }
+body .btn { margin-top: 40px; width: 400px; height: 40px; font-size: 14px; font-size: 1.4rem; line-height: 12px; }
+@media screen and (max-width: 960px) { body .btn { width: 295px; height: 40px; line-height: 1.28; margin-top: 40px; } }
+body .btn_putty { margin-top: 8px; width: 400px; height: 40px; font-size: 14px; font-size: 1.4rem; line-height: 12px; }
+@media screen and (max-width: 960px) { body .btn_putty { width: 295px; height: 40px; line-height: 1.28; margin-top: 20px; } }
+body .btn_brdblk { margin-top: 24px; margin-bottom: 8px; width: 400px; height: 40px; font-size: 14px; font-size: 1.4rem; line-height: 12px; }
+@media screen and (max-width: 960px) { body .btn_brdblk { width: 295px; height: 40px; line-height: 1.28; margin-top: 24px; margin-bottom: 20px; } }

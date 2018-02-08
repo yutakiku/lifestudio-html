@@ -27,47 +27,6 @@ main {
 				line-height: 1.5;
 			}
 		}
-		.btn {
-			margin-top: 40px;
-			width: 400px;
-			height: 40px;
-			@include fz(14);
-			line-height: 12px;
-			@media #{$tablet} {
-				width: 295px;
-				height: 40px;
-				line-height: 1.28;
-				margin-top: 40px;
-			}
-		}
-		.btn_putty {
-			margin-top: 8px;
-			width: 400px;
-			height: 40px;
-			@include fz(14);
-			line-height: 12px;
-			@media #{$tablet} {
-				width: 295px;
-				height: 40px;
-				line-height: 1.28;
-				margin-top: 20px;
-			}
-		}
-		.btn_brdblk {
-			margin-top: 24px;
-			margin-bottom: 8px;
-			width: 400px;
-			height: 40px;
-			@include fz(14);
-			line-height: 12px;
-			@media #{$tablet} {
-				width: 295px;
-				height: 40px;
-				line-height: 1.28;
-				margin-top: 24px;
-				margin-bottom: 20px;
-			}
-		}
 		dl {
 			@include display-flex;
 			@include justify-content(flex-start);
@@ -652,3 +611,193 @@ main {
 
 	} // section
 } // main
+
+body {
+	.modal {
+		display: block;
+		.container_reserve {
+			background: #ffffff;
+			width: 60%;
+			min-width: 640px;
+			height: auto;
+			position: fixed;
+			top: 20%;
+			left: 50%;
+			margin-left: -30%;
+			padding: 32px 40px 40px 40px;
+			@include display-flex;
+			@include justify-content(flex-start);
+			@include align-items(flex-start);
+			@include flex-wrap(wrap);
+			@media #{$tablet} {
+				width: 90%;
+				margin-left: -45%;
+				min-width: 288px;
+				padding: 18px 16px;
+			}
+			dl {
+				margin-bottom: 16px;
+				&.name {
+					width: 50%;
+					min-width: 280px;
+					padding-right: 40px;
+					@media #{$tablet} {
+						width: 100%;
+						padding-right: 0;
+					}
+					dt {
+						padding-bottom: 8px;
+					}
+					dd {
+						
+						.remind p {
+						    font-size: 12px;
+						    font-size: 1.2rem;
+						    line-height: 1.5;
+						    text-align: left;
+						    width: 100%;
+						    padding-top: 2px;
+						}
+					}
+				}
+				&.gender {
+					width: 30%;
+					min-width: 176px;
+					@media #{$tablet} {
+						width: 50%;
+						min-width: 96px;
+						padding-right: 18px;
+					}
+					dt {
+						padding-bottom: 22px;
+					}
+					dd {
+						padding-right: 40px;
+					}
+				}
+				&.relation {
+					min-width: 120px;
+					@media #{$tablet} {
+						min-width: 96px;
+					}
+					dt {
+						padding-bottom: 8px;
+					}
+					dd {
+						@include select;
+					}
+				}
+				&.birth {
+					width: 100%;
+					margin-bottom: 0;
+					dt {
+						padding-bottom: 16px;
+					}
+					dd {
+						min-width: 392px;
+						@include select;
+						@media #{$tablet} {
+							min-width: initial;
+						}
+						select {
+							@media #{$tablet} {
+								width: 96px;
+							}
+						}
+						label {
+							margin-right: 16px;
+							@media #{$tablet} {
+								margin-right: 8px;
+							}
+						}
+					}		
+				}
+				&.btn_space {
+					width: 100%;
+					margin: 0 auto;
+					dd {
+					}
+				}				
+			}
+		} // &.container_reserve
+
+		button {
+			&.close {
+				position: fixed;
+				top: 15%;
+				right: 15%;
+				height: 40px;
+				width: 40px;
+				@media #{$tablet} {
+					height: 24px;
+					width: 24px;
+					right: 5%;
+				}
+				&::before {
+					content: "";
+					height: 2px;
+					display: block;
+					background: #ffffff;
+					position: relative;
+					top: 0;
+					@include transform(rotate(45deg));
+				}
+				&::after {
+					content: "";
+					height: 2px;
+					display: block;
+					background: #ffffff;
+					position: relative;
+					top: -2px;
+					@include transform(rotate(-45deg));
+				}
+			}
+		}
+	} // modal
+
+	// ボタンレイアウト
+	.btn {
+		margin-top: 40px;
+		width: 400px;
+		height: 40px;
+		@include fz(14);
+		line-height: 12px;
+		@media #{$tablet} {
+			width: 295px;
+			height: 40px;
+			line-height: 1.28;
+			margin-top: 40px;
+		}
+	}
+	.btn_putty {
+		margin-top: 8px;
+		width: 400px;
+		height: 40px;
+		@include fz(14);
+		line-height: 12px;
+		@media #{$tablet} {
+			width: 295px;
+			height: 40px;
+			line-height: 1.28;
+			margin-top: 20px;
+		}
+	}
+	.btn_brdblk {
+		margin-top: 24px;
+		margin-bottom: 8px;
+		width: 400px;
+		height: 40px;
+		@include fz(14);
+		line-height: 12px;
+		@media #{$tablet} {
+			width: 295px;
+			height: 40px;
+			line-height: 1.28;
+			margin-top: 24px;
+			margin-bottom: 20px;
+		}
+	}
+
+} // body
+
+

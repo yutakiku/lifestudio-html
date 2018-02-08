@@ -557,7 +557,8 @@ body {
 [type="password"],
 [type="email"],
 [type="tel"],
-[type="number"] {
+[type="number"],
+select {
 	width: 100%;
 	border: solid 1px $btn-gray-dead;
 	height: 48px;

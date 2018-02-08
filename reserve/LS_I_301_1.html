@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" type="text/css" href="../common/css/style.css">
+	<link rel="stylesheet" type="text/css" href="../common/css/reserve.css">
+	<title>ライフスタジオ</title>
+</head>
+<body>
+	<!-- ヘッター -->
+	<header>
+		<div class="brand_logo">
+			<a href="#"><img src="../common/img/logo.png" alt="ライフスタジオ"></a>
+		</div>
+		<ul>
+			<li class="btn"><a href="#"><span>ログイン</span></a></li>
+			<li class="btn_putty"><a href="#"><span>スタジオ予約</span></a></li>
+		</ul>
+	</header>
+	<!-- /ヘッター -->
+
+	<!-- メニュー開閉ボタン -->
+	<div id="global_nav_btn" class="sp_nav">
+		<button type="button"><span></span></button>
+	</div>
+	<!-- /メニュー開閉ボタン -->
+
+	<!-- メニュー -->
+	<aside class="sidebar">
+		<div class="brand_logo"><a href="#"><img src="../common/img/logo.png" alt="ライフスタジオ"></a></div>
+		<nav>
+			<ul class="nav">
+				<li><a href="#">ライフ通信</a></li>
+				<li><a href="#">店舗紹介</a></li>
+				<li><a href="#">ギャラリー</a></li>
+				<li><a href="#">システム</a></li>
+				<li><a href="#">コミュニティ</a></li>
+			</ul>
+		</nav>
+		<div class="btn"><a href="#"><span>ログイン</span></a></div>
+		<div class="btn_putty"><a href="#"><span>スタジオ予約</span></a></div>
+	</aside>
+	<!-- /メニュー -->
+
+	<div id="global_overlay" class="modal_overlay"></div>
+
+	<div class="modal modal_overlay">
+		<button class="close"></button>
+		<div class="container_reserve">
+			<dl class="name">
+				<dt>お名前</dt>
+				<dd>
+					<div class="remind">
+						<input type="email" name="">
+					</div>
+				</dd>
+			</dl>
+			<dl class="name">
+				<dt>お名前（ローマ字）</dt>
+				<dd>
+					<div class="remind">
+						<input type="email" name="">
+						<p>半角で入力してください。（例：Yamada Taro）</p>
+					</div>
+				</dd>
+			</dl>
+			<dl class="gender">
+				<dt>性別</dt>
+				<dd>
+					<label class="radio"><input type="radio" name="radio01">女性</label>
+					<label class="radio"><input type="radio" name="radio01">男性</label>
+				</dd>
+			</dl>
+			<dl class="relation">
+				<dt>間柄</dt>
+				<dd>
+					<label>
+						<select>
+							<option value="">子</option>
+							<option value="">父</option>
+							<option value="">母</option>
+						</select>
+					</label>
+				</dd>
+			</dl>
+			<dl class="birth">
+				<dt>生年月日</dt>
+				<dd>
+					<label>
+						<select>
+							<option value="">2018</option>
+							<option value="">2017</option>
+							<option value="">2016</option>
+							<option value="">2015</option>
+							<option value="">2014</option>
+							<option value="">2013</option>
+							<option value="">2012</option>
+							<option value="">2011</option>
+							<option value="">2010</option>
+						</select>
+					</label>
+					<label>
+						<select>
+							<option value="">1月</option>
+							<option value="">2月</option>
+							<option value="">3月</option>
+							<option value="">4月</option>
+							<option value="">5月</option>
+							<option value="">6月</option>
+							<option value="">7月</option>
+							<option value="">8月</option>
+							<option value="">9月</option>
+							<option value="">10月</option>
+							<option value="">11月</option>
+							<option value="">12月</option>
+						</select>
+					</label>
+					<label>
+						<select>
+							<option value="">1日</option>
+							<option value="">2日</option>
+							<option value="">3日</option>
+							<option value="">4日</option>
+							<option value="">5日</option>
+							<option value="">6日</option>
+							<option value="">7日</option>
+							<option value="">8日</option>
+							<option value="">9日</option>
+							<option value="">10日</option>
+							<option value="">11日</option>
+							<option value="">12日</option>
+							<option value="">13日</option>
+							<option value="">14日</option>
+							<option value="">15日</option>
+							<option value="">16日</option>
+							<option value="">17日</option>
+							<option value="">18日</option>
+							<option value="">19日</option>
+							<option value="">20日</option>
+							<option value="">21日</option>
+							<option value="">22日</option>
+							<option value="">23日</option>
+							<option value="">24日</option>
+							<option value="">25日</option>
+							<option value="">26日</option>
+							<option value="">27日</option>
+							<option value="">28日</option>
+							<option value="">29日</option>
+							<option value="">30日</option>
+							<option value="">31日</option>
+						</select>
+					</label>
+				</dd>
+			</dl>
+			<dl class="btn_space">
+				<dd class="btn"><a href="#"><span>登録する</span></a></dd>
+				<dd class="btn_brdblk"><a href="#"><span>閉じる</span></a></dd>
+			</dl>
+		</div>
+	</div>
+
+	<!-- メインコンテンツ -->
+	<main>
+		<div class="main_in">
+			<div class="common_head">
+				<h1 class="center">予約枠が確定しました</h1>
+			</div>
+
+			<section class="reserve">
+				<p>スタジオからお電話にてご連絡をさせていただき、撮影内容の確認とご案内をさせていただきます。<br>
+				下記のご連絡先、撮影情報、ご家族さま情報を必ずご入力してください。</p>
+				<div class="wrap">
+					<h3>ご予約内容</h3>
+					<p><span>撮影日時：2017/11/1（水）9:00</span><span>青山店　Baby & Kids</span></p>
+					<dl class="tel">
+						<dt>携帯電話番号</dt>
+						<dd>
+							<div class="remind">
+								<input type="email" name="">
+								<p>連絡が可能な電話番号をもう一度確認してください。</p>
+							</div>
+						</dd>
+					</dl>
+					<dl class="border">
+						<dt>メールアドレス</dt>
+						<dd>
+							abcdefg0123@photocreate.co.jp
+						</dd>
+					</dl>
+					<h3>撮影情報</h3>
+					<dl class="list">
+						<dt>七五三のお着物はレンタル or お持ち込みですか？</dt>
+						<dd>
+							<label class="radio"><input type="radio" name="radio01">レンタル</label>
+							<label class="radio"><input type="radio" name="radio01">お持ち込み</label>
+						</dd>
+					</dl>
+					<dl class="list">
+						<dt>撮影内容を選択してください</dt>
+						<dd>
+							<label class="radio"><input type="radio" name="radio01">入学・卒業</label>
+							<label class="radio"><input type="radio" name="radio01">誕生日記念</label>
+							<label class="radio"><input type="radio" name="radio01">Maternity</label>
+							<label class="radio"><input type="radio" name="radio01">Profile</label>
+						</dd>
+					</dl>
+					<dl class="list">
+						<dt>着付け、ヘアメイクはご依頼されますか？</dt>
+						<dd>
+							<label class="check"><input type="checkbox">着付け</label>
+							<label class="check"><input type="checkbox">ヘアメイク</label>
+						</dd>
+					</dl>
+					<dl class="list">
+						<dt>ご来店方法</dt>
+						<dd>
+							<label class="radio"><input type="radio" name="radio01">車</label>
+							<label class="radio"><input type="radio" name="radio01">電車</label>
+							<label class="radio"><input type="radio" name="radio01">自転車</label>
+							<label class="radio"><input type="radio" name="radio01">その他</label>
+						</dd>
+					</dl>
+
+					<h3>ご家族さま情報</h3>
+					<p>当日ご来店予定のご家族さまを選択してください。</p>
+					<dl class="box">
+						<dt><label class="check"><input type="checkbox"></label></dt>
+						<dd>
+							<p>山田　太郎（Yamada Taro）</p>
+							<p><span>性別：男</span><span>間柄：本人</span></p>
+						</dd>
+					</dl>
+					<dl class="box">
+						<dt><label class="check"><input type="checkbox"></label></dt>
+						<dd>
+							<p>山田絵里子（Yamada Eriko）</p>
+							<p><span>性別：女</span><span>間柄：子</span><span>生年月日：2010年12月12日</span></p>
+							<p><a href="#"><span>編集する</a><a href="#"><span>削除する</span></a></p>
+						</dd>
+					</dl>
+					<dl class="box">
+						<dt><label class="check"><input type="checkbox"></label></dt>
+						<dd>
+							<p>山田次郎（Yamada Jiro）</p>
+							<p><span>性別：男</span><span>間柄：子</span><span>生年月日：2012年10月10日</span></p>
+							<p><a href="#"><span>編集する</a><a href="#"><span>削除する</span></a></p>
+						</dd>
+					</dl>
+					<p class="supplement"><a href="#"><span>ご家族さま情報を追加</span></a></p>
+					<div class="btn"><a href="#"><span>確定する</span></a></div>
+				</div>
+			</section>
+
+		</div><!-- /.main-in -->
+	</main>
+	<!-- /メインコンテンツ -->
+
+	<!-- フッター -->
+	<footer>
+		<div class="footer_in">
+			<ul class="breadcrumb">
+				<li><a href="#"><span>トップ</span></a></li>
+				<li><a href="#"><span>スタジオ予約</span></a></li>
+				<li><span>予約枠の確定</span></li>
+			</ul>
+			<div class="information">
+				<ul>
+					<li><a href="#"><span>会社概要</span></a>	</li>
+					<li><a href="#"><span>Recruit</span></a></li>
+					<li><a href="#"><span>Report</span></a></li>
+					<li><a href="#"><span>サイト利用規約</span></a></li>
+					<li><a href="#"><span>会員登録規約</span></a></li>
+					<li><a href="#"><span>プライバシーポリシー</span></a></li>
+				</ul>
+			</div>
+
+			<hr class="primary">
+
+			<div class="copyright">
+				<p>当サイトの画像・文章の無断転載・コピーは固くお断りいた致します。</p>
+				<p>&copy; Life Studio All Rights Reserved.</p>
+			</div>
+
+		</div>
+	</footer>
+	<!-- /フッター -->
+
+	<script src="../common/js/jquery-3.2.1.min.js"></script>
+	<script src="../common/js/common.js"></script>
+</body>
+</html>
